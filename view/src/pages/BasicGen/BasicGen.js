@@ -82,11 +82,28 @@ class BasicGen extends Component {
                             </AddSource>
                         </Row>
                         <br />
+                        <br />
                         <Row>
                             <RepeatSource onClick={this.handleRepeatSource}
                             >
                             Repeat Source
                             </RepeatSource>
+                        </Row>
+                    </div>
+                    <div className="rightDiv">
+                        <Row>
+                            <div className="genDiv">
+                                <h1>Generator #1</h1>
+                                <div id="math">
+                                    <i id="math1"></i><i id="math2"></i><i id="math3"></i><i id="mathN"></i> 
+                                </div>
+                            </div>
+                            <div className="legs">
+                                <b id="l1">L1</b><b id="l2">L2</b><b id="l3">L3</b><b id="n">N</b>
+                            </div>
+                            <div className="lines">
+                                <div id="line1">|</div><div id="line2">|</div><div id="line3">|</div><div id="line4">|</div>
+                            </div>
                         </Row>
                     </div>
                 </Container>
