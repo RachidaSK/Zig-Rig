@@ -1,28 +1,30 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
-import AddSource from "../../components/AddSource";
+import AddNewDraw from "../../components/AddNewDraw";
 import DeleteProject from "../../components/DeleteProject";
 import RepeatSource from "../../components/RepeatSource";
 import SaveButton from "../../components/SaveButton";
 import OpenProject from "../../components/OpenProject";
 import { Row, Container } from "../../components/Grid";
 import { Input } from "../../components/Forms";
+import Modal from "../../components/Modal";
 
 class BasicGen extends Component {
     state = {
-        project: ""
+        project: "",
+        modalVisible: false
     }
 
     componentWillMount () {
-        const css = require( "./BasicGen.css" );
+        require( "./BasicGen.css" );
     }
 
     handleInputChange = event => {
 
     }
 
-    handleAddSource = event => {
-
+    handleAddNewDraw = event => {
+        this.toggleModalVisible();
     }
 
     handleSaveButton = event => {
@@ -41,10 +43,17 @@ class BasicGen extends Component {
 
     }
 
+    toggleModalVisible () {
+        this.setState({
+            modalVisible: !this.state.modalVisible
+        });
+    }
+
     render() {
         return (
             <div>
-                <img id="logo" src="/images/logo.png" alt="Zig-Rig Logo" className="center" />
+                {this.state.modalVisible && <Modal />}
+                <img id="homeLogo" src="/images/logo.png" alt="Zig-Rig Logo" />
                 <NavBar />
                 <br />
                 <Container fluid>
@@ -76,12 +85,11 @@ class BasicGen extends Component {
                     <br />
                     <div className="lowerDiv">
                         <Row>
-                            <AddSource onClick={this.handleAddSource} 
+                            <AddNewDraw onClick={this.handleAddNewDraw} 
                             >
-                            Add New Power Source
-                            </AddSource>
+                            Add New Draw
+                            </AddNewDraw>
                         </Row>
-                        <br />
                         <br />
                         <Row>
                             <RepeatSource onClick={this.handleRepeatSource}
@@ -94,9 +102,9 @@ class BasicGen extends Component {
                         <Row>
                             <div className="genDiv">
                                 <h1>Generator #1</h1>
-                                <div id="math">
-                                    <i id="math1"></i><i id="math2"></i><i id="math3"></i><i id="mathN"></i> 
-                                </div>
+                            </div>
+                            <div id="math">
+                                <i id="math1">0</i><i id="math2">0</i><i id="math3">0</i><i id="mathN">0</i> 
                             </div>
                             <div className="legs">
                                 <b id="l1">L1</b><b id="l2">L2</b><b id="l3">L3</b><b id="n">N</b>

@@ -1,0 +1,20 @@
+.addDrawModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 20px 20px;
+    width: 40%;
+    height: 385px;
+    box-shadow: 3px 4px 5px #494949;  
+    z-index: 10000;
+}
+
+body {
+    background: blur;
+}
