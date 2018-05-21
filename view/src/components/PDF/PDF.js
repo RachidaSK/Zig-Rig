@@ -9,7 +9,7 @@ var pdfData =
     <h2>T.Novell Diagram #1014</h2>
     <table>
         <tr>
-            <th>Draws</th>
+            <th>Loads</th>
             <th>Connection\nType</th>
             <th>Current</th>
             <th>Leg 1</th>
