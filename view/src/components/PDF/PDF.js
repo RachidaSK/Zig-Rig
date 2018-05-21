@@ -1,8 +1,49 @@
 import React from "react";
 import "./PDF.css";
 import jsPDF from "jspdf";
-// import "jquery";
+import Project from "../../../../models/Project.js";
 
+// CONSTANTS GRABBING MODEL DATA
+const userName = Project.user.username;
+const projectName = Project.name;
+const projectLoads = Project.loads;
+
+// FUNCTION TO MAKE NEW ROWS FOR PDF TABLE
+function loadRowFunc(projectLoads){
+    let newRows = "";
+    for (let i = 0; i<projectLoads.length; i++){
+        const newRow = 
+        "<tr><td>"+projectLoads[i].name+
+        "</td><td>"+projectLoads[i].current+
+        "</td><td>"+projectLoads[i].phase+
+        "</td><td>"+projectLoads[i].connection+
+        "</td><td>"+projectLoads[i].type+
+        "</td></tr>"
+        ;
+        newRows += newRow;
+    }
+    return newRows;
+}
+
+// THE MODEL UPON WHICH OUR PDF WILL BUILD
+var modelPDF =
+`<div>
+    <h1>ZigRig Run Diagram</h1>
+    <h2>${userName}</h2>
+    <h2>${projectName}</h2>
+    <table>
+        <tr>
+            <th>Loads</th>
+            <th>Current</th>
+            <th>Phase</th>
+            <th>Connection</th>
+            <th>Type</th>
+        </tr>
+        ${loadRowFunc(projectLoads)}
+    </table>
+</div>`;
+
+// A DUMMY TABLE STANDING BY INCASE MODEL GENERATOR ISN'T WORKING IN TIME
 var pdfData = 
 `<div>
     <h1>ZigRig Run Diagram</h1>
@@ -60,11 +101,13 @@ var pdfData =
     </table>
 </div>`
 ;
-var pdfFileName;
+
+// A variable to (in the future) generate a filename if the Project name exists
+var pdfFileName = projectName ? ""+userName+"."+projectName+"":undefined;
 
 function HTMLtoPDF(){
     var pdf = new jsPDF('p', 'pt', 'letter');
-    var source = pdfData ||"Hello, world!";
+    var source = Project?modelPDF:pdfData;
     // source = $('#HTMLtoPDF')[0];
     var specialElementHandlers = {
         '#bypassme': function(element, renderer){
@@ -87,7 +130,7 @@ function HTMLtoPDF(){
           function (dispose) {
             // dispose: object with X, Y of the last line add to the PDF
             //          this allow the insertion of new lines after html
-            pdf.save(pdfFileName||'helloworld.pdf');
+            pdf.save(pdfFileName||'ZRdiagram.pdf');
           }
       )		
     }
@@ -101,6 +144,11 @@ export const PDF = ({PDFrequest}) => {
         >Generate PDF</button>
     );
 };
+
+
+
+// ----------------R&D-GRAVEYARD----------------
+// ---------------------------------------------
 
 
 // react-pdf dependencies
@@ -149,11 +197,6 @@ export const PDF = ({PDFrequest}) => {
 //         >Generate PDF</button>
 //     );
 // };
-
-
-
-// ----------------R&D-GRAVEYARD----------------
-// ---------------------------------------------
 // -------PDFKIT DEPENDENCIES
 // import PDFDocument from "pdfkit";
 // import fs from "fs";
