@@ -30,12 +30,13 @@ class FormModal extends React.Component {
     }
 
     closeModal = event => {
+        console.log("clicked");
         this.toggleModalVisible();
     };
 
     toggleModalVisible () {
         this.setState({
-            modalVisible: !this.state.modalVisible
+            modalVisible: this.state.modalVisible
         });
     };
 
@@ -54,7 +55,7 @@ class FormModal extends React.Component {
                                 value={this.newDrawInput}
                                 onChange={this.handleInputModalChange}
                                 name="newDrawInput"
-                                placeholder="   New Draw Title"
+                                placeholder="New Draw Title"
                             />
                         </Column>
                     </Row>
@@ -69,7 +70,7 @@ class FormModal extends React.Component {
                                 value={this.voltage}
                                 onChange={this.handleInputChange}
                                 name="voltage"
-                                placeholder="   0"
+                                placeholder="0"
                             />
                         </Column>
                         <Column size="lg-4">
@@ -80,7 +81,7 @@ class FormModal extends React.Component {
                                 value={this.amperage}
                                 onChange={this.handleInputChange}
                                 name="amperage"
-                                placeholder="   0"
+                                placeholder="0"
                             />
                         </Column>
                         <Column size="lg-4">
@@ -91,7 +92,7 @@ class FormModal extends React.Component {
                                 value={this.wattage}
                                 onChange={this.handleInputChange}
                                 name="wattage"
-                                placeholder="   0"
+                                placeholder="0"
                             />
                         </Column>
                     </Row>

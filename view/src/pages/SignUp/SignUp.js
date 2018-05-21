@@ -32,7 +32,7 @@ class SignUp extends Component {
     render() {
         return (
             <Container fluid>
-                <img id="signInUpLogo" class="img-responsive" src="/images/logo.png" alt="Zig-Rig Logo" className="center" />
+                <img id="signInUpLogo" className="img-responsive" src="/images/logo.png" alt="Zig-Rig Logo" className="center" />
                 <Row>
                     <h3>Welcome to Zig-Rig! Zig-Rig is a simple, easy-to-use online  planning tool for <br />
                         calculating electrical power distribution for a multitude of power sources. </h3>

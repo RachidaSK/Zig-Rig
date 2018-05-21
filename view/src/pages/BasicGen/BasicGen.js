@@ -6,7 +6,7 @@ import RepeatSource from "../../components/RepeatSource";
 import SaveButton from "../../components/SaveButton";
 import OpenProject from "../../components/OpenProject";
 import { Row, Container } from "../../components/Grid";
-import { Input } from "../../components/Forms";
+import { InputProject } from "../../components/InputProject";
 import Modal from "../../components/Modal";
 
 class BasicGen extends Component {
@@ -74,7 +74,7 @@ class BasicGen extends Component {
                         </Row>
                         <br />
                         <Row>
-                            <Input
+                            <InputProject
                                 value={this.state.project}
                                 onChange={this.handleInputChange}
                                 name="project"
