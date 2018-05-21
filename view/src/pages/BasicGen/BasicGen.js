@@ -8,6 +8,7 @@ import OpenProject from "../../components/OpenProject";
 import { Row, Container } from "../../components/Grid";
 import { InputProject } from "../../components/InputProject";
 import Modal from "../../components/Modal";
+import {PDF} from '../../components/PDF';
 
 class BasicGen extends Component {
     state = {
@@ -71,6 +72,7 @@ class BasicGen extends Component {
                             >
                             Delete
                             </DeleteProject>
+														<PDF/>
                         </Row>
                         <br />
                         <Row>

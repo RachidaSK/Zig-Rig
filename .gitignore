@@ -60,3 +60,4 @@ typings/
 *.swo
 *.swp
 .~lock*
+.DS_Store

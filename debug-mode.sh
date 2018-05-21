@@ -1,1 +1,1 @@
-DEBUG=express:* yarn start
+DEBUG=express:* node ./bin/www

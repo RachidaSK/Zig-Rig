@@ -2,19 +2,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var apiRouter = require('./routes/api');
-
+const mongoose = require("mongoose");
+var routes = require('./routes');
 var app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, './view/build')));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("view/build"));
+}
 
-app.use('/api', apiRouter);
-app.use('/', indexRouter);
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/zigrig");
+
+// Define routes
+app.use(routes);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./view/build/index.html"));
+});
 
 module.exports = app;
