@@ -7,6 +7,7 @@ import SaveButton from "../../components/SaveButton";
 import OpenProject from "../../components/OpenProject";
 import { Row, Container } from "../../components/Grid";
 import { Input } from "../../components/Forms";
+import {PDF} from '../../components/PDF';
 
 class BasicGen extends Component {
     state = {
@@ -62,6 +63,7 @@ class BasicGen extends Component {
                             >
                             Delete
                             </DeleteProject>
+														<PDF/>
                         </Row>
                         <br />
                         <Row>

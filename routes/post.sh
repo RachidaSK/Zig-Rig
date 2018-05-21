@@ -1,4 +1,4 @@
 curl --header "Content-Type: application/json" \
   --request POST \
-  --data '{"username":"xyz","password":"xyz"}' \
-  http://localhost:3000/api/login
+  --data '{"name":"Test template","voltage":120,"current":20}' \
+  http://localhost:3001/api/template
