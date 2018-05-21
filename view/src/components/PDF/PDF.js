@@ -3,7 +3,63 @@ import "./PDF.css";
 import jsPDF from "jspdf";
 // import "jquery";
 
-var pdfData;
+var pdfData = 
+`<div>
+    <h1>ZigRig Run Diagram</h1>
+    <h2>T.Novell Diagram #1014</h2>
+    <table>
+        <tr>
+            <th>Draws</th>
+            <th>Voltage</th>
+            <th>Current</th>
+            <th>Leg 1</th>
+            <th>Leg 2</th>
+            <th>Leg 3</th>
+        </tr>
+        <tr>
+            <td>Rooftop 20k #1</td>
+            <td>120/208V</td>
+            <td>166.6</td>
+            <td>83.3A</td>
+            <td>83.3A</td>
+            <td>-----</td>
+        </tr>
+        <tr>
+            <td>Rooftop 20k #2</td>
+            <td>120/208V</td>
+            <td>166.6</td>
+            <td>83.3A</td>
+            <td>-----</td>
+            <td>83.3A</td>
+        </tr>
+        <tr>
+            <td>Rooftop 20k #3</td>
+            <td>120/208V</td>
+            <td>166.6</td>
+            <td>-----</td>
+            <td>83.3A</td>
+            <td>83.3A</td>
+        </tr>
+        <tr>
+            <td>Rooftop 10k #1</td>
+            <td>120/208V</td>
+            <td>83.3A</td>
+            <td>41.65A</td>
+            <td>41.65A</td>
+            <td>-----</td>
+        </tr>
+        <tr>
+            <th>Totals</th>
+            <th>-----</th>
+            <th>583.1A</th>
+            <th>208.25A</th>
+            <th>208.25A</th>
+            <th>166.6A</th>
+        </tr>
+        
+    </table>
+</div>`
+;
 var pdfFileName;
 
 function HTMLtoPDF(){
