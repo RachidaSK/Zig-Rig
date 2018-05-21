@@ -5,8 +5,9 @@ const Schema = mongoose.Schema;
 const loadTemplateSchema = new Schema({
 
     name: {type: String, required: true},
-    voltage: {type: Number, required: true},
+    phase: {type: String, required: true},
     current: {type: Number, required: true},
+    type: {type: String, required: true},
 
     user: {
         type: Schema.Types.ObjectId,

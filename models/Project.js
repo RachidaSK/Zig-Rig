@@ -7,13 +7,8 @@ const projectSchema = new Schema({
     name: {type: String, required: true},
 
     generator: {
-      output: {
-        type: String,
-        required: true
-      },
       capacity: {
-        type: Number,
-        required: true
+        type: Number
       }
     },
 
@@ -27,14 +22,18 @@ const projectSchema = new Schema({
           type: Number,
           required: true
         },
-        voltage: {
-          type: Number,
+        phase: {
+          type: String,
           required: true
         },
         connections: [{
+          type: String
+        }],
+        type: {
           type: String,
           required: true
-        }]
+        }
+
       }
     ],
 
