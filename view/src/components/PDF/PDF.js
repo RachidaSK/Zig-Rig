@@ -4,7 +4,7 @@ import jsPDF from "jspdf";
 import Project from "../../../../models/Project.js";
 
 // CONSTANTS GRABBING MODEL DATA
-const userName = Project.user.username;
+const userName = Project.user;
 const projectName = Project.name;
 const projectLoads = Project.loads;
 
@@ -16,7 +16,7 @@ function loadRowFunc(projectLoads){
         "<tr><td>"+projectLoads[i].name+
         "</td><td>"+projectLoads[i].current+
         "</td><td>"+projectLoads[i].phase+
-        "</td><td>"+projectLoads[i].connection+
+        "</td><td>"+projectLoads[i].connections+
         "</td><td>"+projectLoads[i].type+
         "</td></tr>"
         ;
@@ -43,7 +43,7 @@ var modelPDF =
     </table>
 </div>`;
 
-// A DUMMY TABLE STANDING BY INCASE MODEL GENERATOR ISN'T WORKING IN TIME
+// A DUMMY TABLE STANDING BY IF MODEL GENERATOR ISN'T WORKING IN TIME
 var pdfData = 
 `<div>
     <h1>ZigRig Run Diagram</h1>
