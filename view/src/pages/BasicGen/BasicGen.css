@@ -1,29 +1,153 @@
-#logo {
-    width: 150px;
-    float: left;
+body {
+    background: url("/images/grey_wash_wall.png") no-repeat fixed;
+    background-repeat: repeat;
 }
 
+/* Logo */
+#homeLogo {
+    width: 150px;
+    float: left;
+    margin-left: 30px;
+}
+
+/* Nav Bar */
 #nav-bar {
     margin: 25px 50px 0px 0px;
 }
 
-body {
-    background: grey;
-}
-
+/* Buttons and Inputs */
 .topDiv {
     margin-top: 35px;
 }
 
-.form-control {
-    margin-left: 5%;
-    width: 25%;
-}
-
 .saveButton {
-    margin-left: 5%;
+    margin-left: 8.7%;
 }
 
 .lowerDiv {
-    margin-left: 15%;
+    margin-left: 27.5%;
+}
+
+.repeatSource {
+    line-height: 44px;
+}
+
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: none;
+}
+
+/* Generator Div */
+.genDiv {
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(182, 182, 182);
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: -200px 250px 0 0;
+    padding: 112px 120px;
+    box-shadow: 3px 4px 5px #494949;  
+}
+
+/* L Labels and Leg Calculation Divs */
+.legs {
+    float: right;
+    margin-top: 101px;
+    margin-right: -110px;
+    font-size: 17px;
+}
+
+#math {
+    float: right;
+    margin-top: 67px;
+    margin-right: -114px;
+    font-size: 18px;
+}
+
+#l1,
+#l2,
+#l3,
+#n,
+#math1,
+#math2,
+#math3,
+#mathN {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#l1 {
+    color: rgb(212, 2, 2);
+}
+
+#l1,
+#math1 {
+    position: absolute;
+}
+
+#l2,
+#l3,
+#n,
+#math2,
+#math3,
+#mathN {
+    position: relative;
+}
+
+#l2,
+#math2 {
+    left: 100px;
+}
+
+#l3,
+#math3 {
+    left: 185px;
+}
+
+#n,
+#mathN {
+    left: 272px;
+}
+
+#l2 {
+    color: rgb(95, 151, 255);
+}
+
+#l3 {
+    color: black;
+}
+
+#n {
+    color: white;
+}
+
+/* Lines */
+#line1,
+#line2,
+#line3,
+#line4 {
+    height: 1000px;
+    margin-left: 980px;
+    color: rgb(105, 105, 105);
+    margin-bottom: 50px;
+}
+
+#line1 {
+    border-left: 2px solid rgb(199, 1, 1);
+}
+
+#line2 {
+    border-left: 2px solid rgb(95, 151, 255);
+    margin-left: 1082px;
+    margin-top: -1050px;
+}
+
+#line3 {
+    border-left: 2px solid black;
+    margin-left: 1185px;
+    margin-top: -1050px;
+}
+
+#line4 {
+    border-left: 2px solid white;
+    margin-left: 1283px;
+    margin-top: -1050px;
 }

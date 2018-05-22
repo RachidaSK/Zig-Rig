@@ -1,0 +1,15 @@
+.legsButtons {
+    background-color: rgb(182, 182, 182);
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.legsButtons:hover {
+    background-color: rgb(75, 199, 75);
+    border-color: white;
+    cursor: pointer;
+}
