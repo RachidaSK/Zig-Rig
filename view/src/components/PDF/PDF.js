@@ -1,7 +1,30 @@
 import React from "react";
 import "./PDF.css";
 import jsPDF from "jspdf";
-import Project from "../../../../models/Project.js";
+// import Project from "../../../../models/Project.js";
+
+// DUMMY Project OBJECT STANDING IN FOR DATABASE OBJECT FOR PDF GENERATOR
+const Project = {
+    user: {
+        username: "Mr Bill"
+    },
+    name: "Scene 5 Film Shoot",
+    loads: [
+        {
+            name: "Rooftop 2k",
+            current: 1.6,
+            phase: "single",
+            connections: "L1",
+            type: "resistive"
+        },{
+            name: "Rooftop 4k",
+            current: 3.2,
+            phase: "three",
+            connections: null,
+            type: "inductive"
+        }
+    ]
+};
 
 // CONSTANTS GRABBING MODEL DATA
 const userName = Project.user;
