@@ -27,7 +27,7 @@ const Project = {
 };
 
 // CONSTANTS GRABBING MODEL DATA
-const userName = Project.user;
+const userName = Project.user.username;
 const projectName = Project.name;
 const projectLoads = Project.loads;
 

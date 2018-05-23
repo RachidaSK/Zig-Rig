@@ -16,10 +16,11 @@ class FormModal extends React.Component {
         phase: "",
         current: "",
         type: "",
-        L1: "",
-        L2: "",
-        L3: "",
-        N: ""
+        connections: {
+            L1: null,
+            L2: null,
+            L3: null
+        }
     }
 
     componentWillMount () {
@@ -60,7 +61,12 @@ class FormModal extends React.Component {
         let newState = [];
 		newState[event.target.name] = event.target.checked;
 		this.setState(newState);
-	};
+    };
+    
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.props.saveHandler(this.state);
+    }
 
     render() {
         return (
@@ -156,7 +162,7 @@ class FormModal extends React.Component {
                 <Row>
                     <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
                     <b className="currentLegTotalsModal">L1:</b> <i>0</i>  <b>L2:</b> <i>0</i>  <b>L3:</b> <i>0</i>  <b>N:</b> <i>0</i>
-                    <AddButtonModal onClick={this.props.saveHandler}/>
+                    <AddButtonModal onClick={this.handleFormSubmit}/>
                 </Row>
             </div>
 

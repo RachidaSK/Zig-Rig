@@ -42,19 +42,32 @@ class BasicGen extends Component {
 		});
 	}
 	//BasicGen -> Modal -> FormModal -> AddButtonModal
-	handleSubmitAddDraw = () => {
-		this.state.project.loads = this.state.project.loads.concat({
-			name: "Dummy Load",
-			current: 20,
-			phase: "single",
-			connection: "L1",
-			type: "resistive",
+	addNewLoad = (load) => {
+		// this.state.project.loads = this.state.project.loads.concat({
+		// 	name: "Dummy Load",
+		// 	current: 20,
+		// 	phase: "single",
+		// 	connection: "L1",
+		// 	type: "resistive",
+		// });
+		const { loads } = this.state.project;
+		const newLoads = loads.concat(load);
+
+		this.setState({
+			project: {
+				loads: newLoads
+			}
 		});
 	}
 
 	render() {
 		return [
-			this.state.modalVisible ? <Modal saveHandler={this.handleSubmitAddDraw} handleClose={this.toggleModalVisible} /> : null,
+			this.state.modalVisible ? (
+				<Modal
+					saveHandler={this.addNewLoad} 
+					handleClose={this.toggleModalVisible}
+				/>
+			) : null,
 			<div className={`pageWrapper ${this.state.modalVisible && "blurred"}`}>
 				<NavBar />
 				<Container fluid>
