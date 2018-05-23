@@ -6,6 +6,7 @@
     border-bottom: 2px solid rgb(214, 214, 214);
     margin-bottom: 40px;
     box-shadow: 3px 4px 5px #3b3b3b;
+    padding-bottom: 40px;
 }
 
 #account {
@@ -17,4 +18,27 @@
     width: 50px;
     margin: -13px 0px 0px 16px;
     float: left;
+}
+
+.dropdown {
+    float: right;
+    margin-top: -12px;
+    
+}
+
+.dropdown-item {
+    color: black;
+    margin-right: 22px;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-bottom: none;
+}
+
+.dropdown-toggle {
+    border: none !important;
+}
+
+.btn .caret {
+    margin-left: 3px;
 }
