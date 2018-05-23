@@ -11,7 +11,7 @@ class BasicGen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: "New Project",
+			name: null,
 			project: {
 				generator: {
 					capacity: null,
@@ -25,7 +25,10 @@ class BasicGen extends Component {
 	}
 
 	handleInputChange = event => {
-
+		const {name, value} = event.target;
+		this.setState({
+			[name]: value
+		});
 	}
 
 	handleAddNewDraw = event => {
@@ -51,7 +54,7 @@ class BasicGen extends Component {
 		// 	type: "resistive",
 		// });
 		const { loads } = this.state.project;
-		const newLoads = loads.concat(load);
+		const newLoads = loads.concat(load );
 
 		this.setState({
 			project: {
