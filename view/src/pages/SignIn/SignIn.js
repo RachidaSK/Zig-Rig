@@ -32,7 +32,7 @@ class SignIn extends Component {
     render() {
         return (
             <Container fluid>
-                <div className="signPages">
+                <div className="signInDiv center">
                     <img id="signInUpLogo" src="/images/logo.png" alt="Zig-Rig Logo" className="center" />
                     <br />
                     <Row>
