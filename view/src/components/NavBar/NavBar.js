@@ -25,7 +25,7 @@ export default class NavBar extends React.Component {
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle caret>
             Your Account
-        <span class="caret"></span>
+        <span className="caret"></span>
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem ><a href="">About</a></DropdownItem>
