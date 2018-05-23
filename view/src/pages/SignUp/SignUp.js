@@ -33,7 +33,7 @@ class SignUp extends Component {
     render() {
         return (
             <Container fluid>
-                <div className="signPages">
+                <div className="signUpDiv center">
                     <img id="signInUpLogo" src="/images/logo.png" alt="Zig-Rig Logo" className="center" />
                     <Row>
                         <h4>Welcome to Zig-Rig! Zig-Rig is a simple, easy-to-use online  planning tool for <br />

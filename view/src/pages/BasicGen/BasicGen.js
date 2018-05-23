@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
 import AddNewDraw from "../../components/AddNewDraw";
-import RepeatSource from "../../components/RepeatSource";
 import SaveButton from "../../components/SaveButton";
-import { Row, Container } from "../../components/Grid";
+import { Row, Column, Container } from "../../components/Grid";
 import { InputProject } from "../../components/InputProject";
 import Modal from "../../components/Modal";
 import {PDF} from '../../components/PDF';
@@ -37,15 +36,15 @@ class BasicGen extends Component {
     }
 
     render() {
-        return (
-            <div>
+        return [
+            this.state.modalVisible ? <Modal handleClose={this.toggleModalVisible} /> : null,
+            <div className={`pageWrapper ${this.state.modalVisible && "blurred"}`}>
                 <NavBar />
-                {this.state.modalVisible && <Modal handleClose={this.toggleModalVisible} />}
                 <Container fluid>
                     <div className="homeContainer">
                         <div>
-                            <div id="buttonsRow">
-                                <Row>
+                            <Row>
+                                <Column size="lg-7">
                                     <SaveButton onClick={this.handleSaveButton}
                                     >
                                     Save
@@ -55,39 +54,57 @@ class BasicGen extends Component {
                                     Add New Draw
                                     </AddNewDraw>
                                     <PDF /> 
-                                </Row>
-                                <br />
-                                <Row>
+                                </Column>
+                            </Row>
+                            <br />
+                            <Row>
+                                <Column size="lg-7">
                                     <InputProject
                                         value={this.state.project}
                                         onChange={this.handleInputChange}
                                         name="project"
                                         placeholder="Project Title"
                                     />
+                                </Column>
+                            </Row>
+                            <br />
+                            <Row>
+                                <Column size="lg-7">
+                                    <div className="currentLegTotalsModalHome">
+                                        <h4>Current Leg Totals:</h4>
+                                        <ul>
+                                            <h5>L1:</h5>
+                                            <h5>L2:</h5>
+                                            <h5>L3:</h5>
+                                            <h5>N:</h5>
+                                        </ul>
+                                    </div>
+                                </Column>    
+                            </Row>
+                            <hr />
+                            <br />
+                            <div id="templatesDiv">
+                                <Row>
+                                    <Column size="lg-7">
+                                        <h4 id="loadTemplatesHeader">Load Templates:</h4>
+                                        <div className="loadTemplateExample1">Example #1</div>
+                                        <div className="loadTemplateExample2">Example #2</div>
+                                        <div className="loadTemplateExample3">Example #3</div>
+                                    </Column>
+                                </Row> 
+                                <Row>
+                                    <Column size="lg-3">
+                                        <div className="genDiv">
+                                            <img className="generatorCartoon" src="/images/generatorWhite.png" alt="Generator"/>
+                                        </div>
+                                    </Column>
                                 </Row>
                             </div>
-                        </div>
-                        <br />
-                        <div>
-                            <Row>
-                                <div className="genDiv">
-                                    <img className="generatorCartoon" src="/images/generatorWhite.png" />
-                                </div>
-                                <div id="math">
-                                    <i id="math1">0</i><i id="math2">0</i><i id="math3">0</i><i id="mathN">0</i> 
-                                </div>
-                                <div className="legs">
-                                    <b id="l1">L1</b><b id="l2">L2</b><b id="l3">L3</b><b id="n">N</b>
-                                </div>
-                                <div className="lines">
-                                    <div id="line1">|</div><div id="line2">|</div><div id="line3">|</div><div id="line4">|</div>
-                                </div>
-                            </Row>
                         </div>
                     </div>    
                 </Container>
             </div>
-        )
+        ];
     }
 }
 
