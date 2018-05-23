@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import '../../components/Auth';
 import { Column, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Forms";
 import "./SignUp.css";

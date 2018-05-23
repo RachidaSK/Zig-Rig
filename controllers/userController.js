@@ -6,7 +6,7 @@ module.exports = {
 	login: function(req, cb) {
 		db.User
 		// needs to look for user in the database.
-		.find({username: req.body.username, password: req.body.password})
+		// .find({username: req.body.username, password: req.body.password})
 		// if found then redirect to '/home'
 		.then(function(dbUser){
 			cb(null, dbUser, {redirect: '/home'});
