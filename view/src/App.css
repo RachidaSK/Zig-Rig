@@ -5,6 +5,10 @@ body {
   background-color: gray;
 }
 
+.wrapper {
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }

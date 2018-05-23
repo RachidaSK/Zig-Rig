@@ -1,8 +1,9 @@
-#logo {
-    width: 350px;
-    margin-bottom: 0px;
+/* Sign In Button */
+.btn {
+    margin-right: 47%;
 }
 
-.btn {
-    margin-right: 970px;
+#signInUpLogo {
+    width: 250px;
+    margin-bottom: -35px;
 }

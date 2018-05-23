@@ -1,29 +1,141 @@
-#logo {
-    width: 150px;
-    float: left;
-}
-
-#nav-bar {
-    margin: 25px 50px 0px 0px;
-}
-
 body {
-    background: grey;
+    background: url("/images/concreteTextureDark1.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
-.topDiv {
-    margin-top: 35px;
+/* Div Container */
+.homeContainer {
+    background: rgb(50, 68, 46);
+    width: 80%;
+    opacity: .75;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 4px 5px #3b3b3b;
 }
 
-.form-control {
-    margin-left: 5%;
-    width: 25%;
+/* Buttons and Inputs */
+#buttonsRow {
+    margin-top: 20px;
 }
 
 .saveButton {
     margin-left: 5%;
 }
 
-.lowerDiv {
-    margin-left: 15%;
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: none;
+}
+
+/* Generator Div */
+.genDiv {
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: -140px 88px -58px 14px;
+}
+
+/* L Labels and Leg Calculation Divs */
+.legs {
+    float: right;
+    margin-top: 200px;
+    margin-right: -104px;
+    font-size: 17px;
+}
+
+#math {
+    color: black;
+    float: right;
+    margin-top: 222px;
+    margin-right: -118px;
+    font-size: 18px;
+}
+
+#l1,
+#l2,
+#l3,
+#n,
+#math1,
+#math2,
+#math3,
+#mathN {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#l1 {
+    color: rgb(212, 2, 2);
+}
+
+#l1,
+#math1 {
+    position: absolute;
+}
+
+#l2,
+#l3,
+#n,
+#math2,
+#math3,
+#mathN {
+    position: relative;
+}
+
+#l2,
+#math2 {
+    left: 100px;
+}
+
+#l3,
+#math3 {
+    left: 200px;
+}
+
+#n,
+#mathN {
+    left: 300px;
+}
+
+#l2 {
+    color: rgb(95, 151, 255);
+}
+
+#l3 {
+    color: black;
+}
+
+#n {
+    color: white;
+}
+
+/* Lines */
+#line1,
+#line2,
+#line3,
+#line4 {
+    height: 1000px;
+    margin-left: 866px;
+    color: rgb(56, 77, 52);
+    margin-bottom: 50px;
+}
+
+#line1 {
+    border-left: 2px solid rgb(199, 1, 1);
+}
+
+#line2 {
+    border-left: 2px solid rgb(95, 151, 255);
+    margin-left: 966px;
+    margin-top: -1050px;
+}
+
+#line3 {
+    border-left: 2px solid black;
+    margin-left: 1066px;
+    margin-top: -1050px;
+}
+
+#line4 {
+    border-left: 2px solid white;
+    margin-left: 1166px;
+    margin-top: -1050px;
 }
