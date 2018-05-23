@@ -95,7 +95,7 @@ class BasicGen extends Component {
                                 <Row>
                                     <Column size="lg-3">
                                         <div className="genDiv">
-                                            <img className="generatorCartoon" src="/images/generatorWhite.png" alt="Generator"/>
+                                            <img className="generatorImage" src="/images/generatorWhite.png" alt="Generator"/>
                                         </div>
                                     </Column>
                                 </Row>
