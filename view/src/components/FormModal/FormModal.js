@@ -16,10 +16,9 @@ class FormModal extends React.Component {
         phase: "",
         current: "",
         type: "",
-        L1: "",
-        L2: "",
-        L3: "",
-        N: ""
+        L1: null,
+        L2: null,
+        L3: null
     }
 
     componentWillMount () {
@@ -49,6 +48,14 @@ class FormModal extends React.Component {
     };
     
     switchType = event => {
+        let selectType = event.target.value;
+		this.setState({
+			type: selectType,
+			selectType: null,
+		});
+    };
+
+    switchConnection = event => {
         let selectType = event.target.value;
 		this.setState({
 			type: selectType,
@@ -115,7 +122,6 @@ class FormModal extends React.Component {
                             placeholder="0"
                         />
                     </Column>
-                    
                 </Row>
                 <br />
                 <br />
@@ -126,28 +132,22 @@ class FormModal extends React.Component {
                     <br />
                     <br />
                     <Column size="lg-2">
-                    <label className="checkbox2">
-						<input type="checkbox" className="checkbox-control2" name="L1" checked={this.state.L1} onChange={this.toggleCheckbox}/>
-						<span className="checkbox-label">L1</span>
-					</label>
+                    <label className="checkbox">
+                            <input type="radio" className="checkbox-control" checked={this.state.phase === "3 Phase" || this.state.L1} value="L1" onChange={this.switchConnection}/>
+                            <span className="checkbox-label">L1</span>
+                        </label>
                     </Column>
                     <Column size="lg-2">
-                    <label className="checkbox2">
-						<input type="checkbox" className="checkbox-control2" name="L2" checked={this.state.L2} onChange={this.toggleCheckbox}/>
-						<span className="checkbox-label">L2</span>
-					</label>
+                    <label className="checkbox">
+                            <input type="radio" className="checkbox-control" checked={this.state.phase === "3 Phase" || this.state.L2} value="L2" onChange={this.switchConnection}/>
+                            <span className="checkbox-label">L2</span>
+                        </label>
                     </Column>
-                    <label className="checkbox2">
-						<input type="checkbox" className="checkbox-control2" name="L3" checked={this.state.L3} onChange={this.toggleCheckbox}/>
-						<span className="checkbox-label">L3</span>
-					</label>
+                    <label className="checkbox">
+                            <input type="radio" className="checkbox-control" checked={this.state.phase === "3 Phase" || this.state.L3} value="L3" onChange={this.switchConnection}/>
+                            <span className="checkbox-label">L3</span>
+                        </label>
                     <Column size="lg-2">
-                    </Column>
-                    <Column size="lg-2">
-                    <label className="checkbox2">
-						<input type="checkbox" className="checkbox-control2" name="N" checked={this.state.N} onChange={this.toggleCheckbox}/>
-						<span className="checkbox-label">N</span>
-					</label>
                     </Column>
                 </Row>
                 <br />

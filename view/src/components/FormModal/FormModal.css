@@ -5,3 +5,7 @@
 .currentLegTotalsModal {
     margin-left: 15px;
 }
+
+.checkbox {
+    display: inline-block;
+}
