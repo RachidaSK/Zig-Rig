@@ -1,10 +1,8 @@
 import React from "react";
 import { Row, Column } from "../../components/Grid";
 import { InputModal } from "../InputModal";
-import LegsButtons from "../LegsButtons";
+// import LegsButtons from "../LegsButtons";
 import AddButtonModal from "../AddButtonModal";
-import Select from 'react-select';
-
 
 class FormModal extends React.Component {
     constructor(props) {
