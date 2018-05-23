@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Column } from "../../components/Grid";
 import { InputModal } from "../InputModal";
 import LegsButtons from "../LegsButtons";
-import Dropbox from "../Dropbox";
 import AddButtonModal from "../AddButtonModal";
 
 class FormModal extends React.Component {
@@ -77,7 +76,7 @@ class FormModal extends React.Component {
                             value={this.type}
                             onChange={this.handleInputChange}
                             name="type"
-                            placeholder="0"
+                            placeholder="Resistive"
                         />
                     </Column>
                 </Row>

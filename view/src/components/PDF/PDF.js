@@ -1,16 +1,80 @@
 import React from "react";
 import "./PDF.css";
 import jsPDF from "jspdf";
-// import "jquery";
+// import Project from "../../../../models/Project.js";
 
+// DUMMY Project OBJECT STANDING IN FOR DATABASE OBJECT FOR PDF GENERATOR
+const Project = {
+    user: {
+        username: "Mr Bill"
+    },
+    name: "Scene 5 Film Shoot",
+    loads: [
+        {
+            name: "Rooftop 2k",
+            current: 1.6,
+            phase: "single",
+            connections: "L1",
+            type: "resistive"
+        },{
+            name: "Rooftop 4k",
+            current: 3.2,
+            phase: "three",
+            connections: null,
+            type: "inductive"
+        }
+    ]
+};
+
+// CONSTANTS GRABBING MODEL DATA
+const userName = Project.user;
+const projectName = Project.name;
+const projectLoads = Project.loads;
+
+// FUNCTION TO MAKE NEW ROWS FOR PDF TABLE
+function loadRowFunc(projectLoads){
+    let newRows = "";
+    for (let i = 0; i<projectLoads.length; i++){
+        const newRow = 
+        "<tr><td>"+projectLoads[i].name+
+        "</td><td>"+projectLoads[i].current+
+        "</td><td>"+projectLoads[i].phase+
+        "</td><td>"+projectLoads[i].connections+
+        "</td><td>"+projectLoads[i].type+
+        "</td></tr>"
+        ;
+        newRows += newRow;
+    }
+    return newRows;
+}
+
+// THE MODEL UPON WHICH OUR PDF WILL BUILD
+var modelPDF =
+`<div>
+    <h1>ZigRig Run Diagram</h1>
+    <h2>${userName}</h2>
+    <h2>${projectName}</h2>
+    <table>
+        <tr>
+            <th>Loads</th>
+            <th>Current</th>
+            <th>Phase</th>
+            <th>Connection</th>
+            <th>Type</th>
+        </tr>
+        ${loadRowFunc(projectLoads)}
+    </table>
+</div>`;
+
+// A DUMMY TABLE STANDING BY IF MODEL GENERATOR ISN'T WORKING IN TIME
 var pdfData = 
 `<div>
     <h1>ZigRig Run Diagram</h1>
     <h2>T.Novell Diagram #1014</h2>
     <table>
         <tr>
-            <th>Draws</th>
-            <th>Voltage</th>
+            <th>Loads</th>
+            <th>Connection\nType</th>
             <th>Current</th>
             <th>Leg 1</th>
             <th>Leg 2</th>
@@ -18,7 +82,7 @@ var pdfData =
         </tr>
         <tr>
             <td>Rooftop 20k #1</td>
-            <td>120/208V</td>
+            <td>3 Phase</td>
             <td>166.6</td>
             <td>83.3A</td>
             <td>83.3A</td>
@@ -26,7 +90,7 @@ var pdfData =
         </tr>
         <tr>
             <td>Rooftop 20k #2</td>
-            <td>120/208V</td>
+            <td>3 Phase</td>
             <td>166.6</td>
             <td>83.3A</td>
             <td>-----</td>
@@ -34,7 +98,7 @@ var pdfData =
         </tr>
         <tr>
             <td>Rooftop 20k #3</td>
-            <td>120/208V</td>
+            <td>3 Phase</td>
             <td>166.6</td>
             <td>-----</td>
             <td>83.3A</td>
@@ -42,7 +106,7 @@ var pdfData =
         </tr>
         <tr>
             <td>Rooftop 10k #1</td>
-            <td>120/208V</td>
+            <td>3 Phase</td>
             <td>83.3A</td>
             <td>41.65A</td>
             <td>41.65A</td>
@@ -60,11 +124,13 @@ var pdfData =
     </table>
 </div>`
 ;
-var pdfFileName;
+
+// A variable to (in the future) generate a filename if the Project name exists
+var pdfFileName = projectName ? ""+userName+"."+projectName+"":undefined;
 
 function HTMLtoPDF(){
     var pdf = new jsPDF('p', 'pt', 'letter');
-    var source = pdfData ||"Hello, world!";
+    var source = Project?modelPDF:pdfData;
     // source = $('#HTMLtoPDF')[0];
     var specialElementHandlers = {
         '#bypassme': function(element, renderer){
@@ -87,7 +153,7 @@ function HTMLtoPDF(){
           function (dispose) {
             // dispose: object with X, Y of the last line add to the PDF
             //          this allow the insertion of new lines after html
-            pdf.save(pdfFileName||'helloworld.pdf');
+            pdf.save(pdfFileName||'ZRdiagram.pdf');
           }
       )		
     }
@@ -101,6 +167,11 @@ export const PDF = ({PDFrequest}) => {
         >Generate PDF</button>
     );
 };
+
+
+
+// ----------------R&D-GRAVEYARD----------------
+// ---------------------------------------------
 
 
 // react-pdf dependencies
@@ -149,11 +220,6 @@ export const PDF = ({PDFrequest}) => {
 //         >Generate PDF</button>
 //     );
 // };
-
-
-
-// ----------------R&D-GRAVEYARD----------------
-// ---------------------------------------------
 // -------PDFKIT DEPENDENCIES
 // import PDFDocument from "pdfkit";
 // import fs from "fs";
