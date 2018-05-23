@@ -1,4 +1,17 @@
-/* Sign In Button */
+/* Sign In Div  */
+.signInDiv {
+    background: black;
+    width: 50%;
+    height: 525px;
+    opacity: .85;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 130px;
+}
+ 
+ /* Sign In Button */
 .btn {
     margin-right: 47%;
 }

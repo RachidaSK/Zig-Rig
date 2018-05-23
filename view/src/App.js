@@ -4,7 +4,7 @@ import BasicGen from "./pages/BasicGen";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import MyProjects from "./pages/MyProjects";
-
+import css from "./App.css";
 
 function setBackground () {
   console.log( window.location.pathname );
