@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {setIdToken, setAccessToken} from './authVariables.js';
+import {setIdToken, setAccessToken} from '../Auth/Auth';
 
 class CallBack extends Component {
     constructor() {

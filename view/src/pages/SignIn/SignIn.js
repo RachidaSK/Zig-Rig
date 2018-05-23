@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import '../../components/Auth';
+// import 
 import { Column, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Forms";
 
