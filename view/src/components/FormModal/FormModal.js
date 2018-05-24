@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Column } from "../Grid";
 import { InputModal } from "../InputModal";
-// import LegsButtons from "../LegsButtons";
 import AddButtonModal from "../AddButtonModal";
 
 class FormModal extends React.Component {
@@ -64,6 +63,8 @@ class FormModal extends React.Component {
     handleFormSubmit = event => {
         event.preventDefault();
         this.props.saveHandler(this.state);
+        this.props.handleClose(this.state);
+
     }
 
     switchConnection = event => {
