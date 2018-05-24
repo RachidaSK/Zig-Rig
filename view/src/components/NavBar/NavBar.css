@@ -9,9 +9,17 @@
     padding-bottom: 40px;
 }
 
-#account {
+.account {
     color: white;
-    margin-left: 89%;
+}
+
+/* .account:hover {
+    color: gray;
+} */
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: white;
+    text-decoration: none;
 }
 
 #miniLogo {
@@ -22,8 +30,7 @@
 
 .dropdown {
     float: right;
-    margin-top: -12px;
-    
+    margin-top: -12px;  
 }
 
 .dropdown-item {
@@ -33,6 +40,10 @@
     padding: 8px;
     font-size: 16px;
     border-bottom: none;
+    background-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .dropdown-toggle {
@@ -42,3 +53,19 @@
 .btn .caret {
     margin-left: 3px;
 }
+
+.dropdown-menu {
+    padding-left: 1px;
+    background-color: black; 
+    border-color: white !important;
+}
+
+.menu {
+    color: white;
+}
+
+.menu:hover {
+    color: gray;
+}
+
+
