@@ -2,6 +2,7 @@ import React from "react";
 import "./PDF.css";
 import jsPDF from "jspdf";
 // import Project from "../../../../models/Project.js";
+// import BasicGen from "../../pages/BasicGen/BasicGen.js";
 
 // DUMMY Project OBJECT STANDING IN FOR DATABASE OBJECT FOR PDF GENERATOR
 const Project = {

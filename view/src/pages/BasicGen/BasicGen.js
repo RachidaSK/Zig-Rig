@@ -26,7 +26,7 @@ class BasicGen extends Component {
 	}
 
     handleInputChange = event => {
-        const {value} = event.target;
+        const { value } = event.target;
         const { project } = this.state;
         project.name = value;
         this.setState({ project });
