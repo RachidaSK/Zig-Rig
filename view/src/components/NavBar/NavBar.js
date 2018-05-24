@@ -23,15 +23,15 @@ export default class NavBar extends React.Component {
         <nav id="nav-bar">
         <img id="miniLogo" src="/images/zrLogo1.png" alt="Zig-Rig Logo" />
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>
+          <DropdownToggle className="account" caret>
             Your Account
         <span className="caret"></span>
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem ><a href="">About</a></DropdownItem>
-            <DropdownItem><a href="/myprojects">My Projects</a></DropdownItem>
+            <DropdownItem><a className="menu" href="/myprojects">My Projects</a></DropdownItem>
+            <DropdownItem ><a className="menu" href="">Settings</a></DropdownItem>
             <DropdownItem divider />
-            <DropdownItem><a href="/signin">Logout</a></DropdownItem>
+            <DropdownItem><a className="menu" href="/signin">Logout</a></DropdownItem>
           </DropdownMenu>
         </Dropdown>
         </nav>

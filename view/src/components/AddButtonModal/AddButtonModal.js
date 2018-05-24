@@ -3,8 +3,9 @@ import "./AddButtonModal.css";
 
 const AddButtonModal = props => (
   <button className="addButtonModal" {...props}>
-    + Add
+    Save
   </button>
+
 );
 
 export default AddButtonModal;
