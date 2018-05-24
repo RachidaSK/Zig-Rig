@@ -5,7 +5,10 @@ import BasicGen from "./pages/BasicGen";
 // import SignIn from "./pages/SignIn";
 import LandingPage from './pages/Landing/landingPage.js';
 import MyProjects from "./pages/MyProjects";
-// import css from "./App.css";
+import Contact from "./pages/Contact"
+import About from "./pages/About";
+import css from "./App.css";
+
 
 function setBackground () {
   console.log( window.location.pathname );
@@ -27,6 +30,8 @@ const App = () => (
         {/* <Route exact path="/signup" component={SignUp} /> */}
         <Route exact path="/home" component={BasicGen} />
         <Route exact path="/myprojects" component={MyProjects} />
+        <Route exact path="/contactus" component={Contact} />
+        <Route exact path="/aboutus" component={About} />
       </Switch>
     </div>
   </Router>

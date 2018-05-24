@@ -21,3 +21,9 @@
 .pageWrapper.blurred {
     filter: blur(50px) grayscale(50%);
 }
+
+#newDraw {
+    color: grey;
+    font-size: 18px;
+    margin-left: 13px;
+}

@@ -1,0 +1,67 @@
+/* body {
+background: url("/images/main-generator-wheel.jpg") no-repeat center center fixed;
+background-size: cover;
+} */
+
+.signUpDiv {
+    background: black;
+    width: 50%;
+    height: 640px;
+    opacity: .85;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+/* Logo */
+#signInUpLogo {
+    width: 250px;
+    margin-bottom: -35px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.img-responsive {
+    height: auto;
+    width: auto;
+}
+
+/* Sign Up Button */
+/* .btn {
+    margin-right: 45%;
+} */
+
+/* Zig-Rig Description */
+h4 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* Account */
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.account {
+    /* margin-left: 18.5%; */
+    color: white;
+}
+
+/* Link */
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
