@@ -18,7 +18,7 @@ const Footer = () => (
                      <Column size="lg-2">
                         <h3 className="footerHeaders">Home</h3>
                             <a id="homeFooter" href="/home">
-                                Home
+                                Home Page
                             </a>
                     </Column>
                     <Column size="lg-2">

@@ -19,9 +19,8 @@
 }
 
 /* Generator Div */
-
 .generatorImage {
-    height: 305px;
+    height: 345px;
 }
 
 /* Current Leg Totals */
@@ -42,7 +41,7 @@
     background: rgb(94, 142, 165);
     color: white;
     padding: 52px 25px;
-    width: 115%;
+    width: 100%;
     font-size: 18px;
     border: 1px solid white;
     border-radius: 5px;

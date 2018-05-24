@@ -6,6 +6,7 @@ import { Row, Column, Container } from "../../components/Grid";
 import { InputProject } from "../../components/InputProject";
 import Modal from "../../components/Modal";
 import {PDF} from '../../components/PDF';
+import BuiltLoadComponent from "../../components/BuiltLoadComponent";
 import Footer from "../../components/Footer";
 
 class BasicGen extends Component {
@@ -78,6 +79,7 @@ class BasicGen extends Component {
                                         <PDF /> 
                                     </Column>
                                 </Row>
+                                <br />
                                 <Row>
                                     <Column size="lg-12">
                                         <InputProject
@@ -95,13 +97,13 @@ class BasicGen extends Component {
                                     </Column>
                                 </Row>
                                 <Row>
-                                    <Column size="lg-3">
+                                    <Column size="lg-4">
                                         <div className="loadTemplateExample1">Example #1</div>
                                     </Column>
-                                    <Column size="lg-3">
+                                    <Column size="lg-4">
                                         <div className="loadTemplateExample2">Example #2</div>
                                     </Column>
-                                    <Column size="lg-3">        
+                                    <Column size="lg-4">        
                                         <div className="loadTemplateExample3">Example #3</div>
                                     </Column>
                                 </Row>
@@ -128,7 +130,11 @@ class BasicGen extends Component {
                                 </Row>
                                 <Row>
                                     <Column className="newLoadDiv" size="lg-12">
-                                        <h3>New Load</h3>
+                                        {this.state.project.loads.length ? (
+                                            this.state.project.loads.map(load => (
+                                                <BuiltLoadComponent loadData={load} />
+                                            ))
+                                        ) : <h2>No loads to display.</h2>}
                                     </Column>
                                 </Row>
                             </Column>
