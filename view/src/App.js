@@ -16,6 +16,9 @@ function setBackground () {
     return {
       background: "url('/images/main-generator-wheel-noblur.jpg') no-repeat center center fixed",
       backgroundSize: "cover",
+      height: 840,
+      
+      
     }
   }
 }

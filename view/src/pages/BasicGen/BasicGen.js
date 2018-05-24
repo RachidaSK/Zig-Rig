@@ -31,7 +31,6 @@ class BasicGen extends Component {
 	}
 
     componentDidMount () {
-        // setIdToken();
         if (localStorage.getItem('id_token') > 0) {
             let uid = localStorage.getItem('id_token');
             console.log(uid);
