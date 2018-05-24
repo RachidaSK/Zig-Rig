@@ -13,7 +13,6 @@ class BasicGen extends Component {
 		super(props);
 		this.state = {
 			project: {
-
 				name: "New Project",
 				generator: {
 					capacity: null,
@@ -27,10 +26,10 @@ class BasicGen extends Component {
 	}
 
     handleInputChange = event => {
-        const {project, value} = event.target;
-        this.setState({
-            [project]: value
-        });
+        const {value} = event.target;
+        const { project } = this.state;
+        project.name = value;
+        this.setState({ project });
     }
 
 	handleAddNewDraw = event => {
@@ -114,9 +113,9 @@ class BasicGen extends Component {
                                 <Row>
                                     <Column size="lg-12">
                                         <InputProject
-                                            value={this.state.project}
+                                            value={this.state.project.name}
                                             onChange={this.handleInputChange}
-                                            name="project"
+                                            name="name"
                                             placeholder="Project Title"
                                         />
                                     </Column>
