@@ -33,9 +33,9 @@ background-size: cover;
 }
 
 /* Sign Up Button */
-.btn {
+/* .btn {
     margin-right: 45%;
-}
+} */
 
 /* Zig-Rig Description */
 h4 {
@@ -51,7 +51,7 @@ p {
 }
 
 .account {
-    margin-left: 18.5%;
+    /* margin-left: 18.5%; */
     color: white;
 }
 
