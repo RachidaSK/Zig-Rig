@@ -9,14 +9,21 @@ import {PDF} from '../../components/PDF';
 import Footer from "../../components/Footer";
 
 class BasicGen extends Component {
-    state = {
-        project: "",
-        modalVisible: false
-    }
-
-    componentWillMount () {
-        require( "./BasicGen.css" );
-    }
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: "New Project",
+			project: {
+				generator: {
+					capacity: null,
+				},
+				loads: [],
+			}
+		}
+	}
+	componentWillMount () {
+		require( "./BasicGen.css" );
+	}
 
     handleInputChange = event => {
         const {project, value} = event.target;
@@ -25,19 +32,29 @@ class BasicGen extends Component {
         });
     }
 
-    handleAddNewDraw = event => {
-        this.toggleModalVisible();
-    }
+	handleAddNewDraw = event => {
+		this.toggleModalVisible();
+	}
 
-    handleSaveButton = event => {
-        
-    }
+	handleSaveButton = event => {
 
-    toggleModalVisible = () => {
-        this.setState({
-            modalVisible: !this.state.modalVisible
-        });
-    }
+	}
+
+	toggleModalVisible = () => {
+		this.setState({
+			modalVisible: !this.state.modalVisible
+		});
+	}
+	//BasicGen -> Modal -> FormModal -> AddButtonModal
+	handleSubmitAddDraw = () => {
+		this.state.project.loads = this.state.project.loads.concat({
+			name: "Dummy Load",
+			current: 20,
+			phase: "single",
+			connection: "L1",
+			type: "resistive",
+		});
+	}
 
     render() {
         return [
