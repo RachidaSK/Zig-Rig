@@ -1,14 +1,15 @@
 import decode from 'jwt-decode';
-import { browserHistory } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import auth0 from 'auth0-js';
+
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'b9cDojrEVWLGw1noSN2oLkPppsUjZG-C';
 const CLIENT_DOMAIN = 'zigrig.auth0.com';
-const REDIRECT = 'http://localhost:3000/callback';
-// const SCOPE = '{SCOPE}';
-// const AUDIENCE = 'AUDIENCE_ATTRIBUTE';
+const REDIRECT = 'http://localhost:3000/home';
+// const SCOPE = 'openid';
+// const AUDIENCE = 'https://zigrig.auth0.com/userinfo';
 
 var auth = new auth0.WebAuth({
   clientID: CLIENT_ID,
@@ -20,7 +21,7 @@ export function login() {
     responseType: 'token id_token',
     redirectUri: REDIRECT,
     // audience: AUDIENCE,
-    // scope: SCOPE
+    scope: 'openid profile'
   });
 }
 
@@ -30,7 +31,7 @@ export function logout() {
 	//these two functions are defined below
   clearIdToken();
   clearAccessToken();
-  browserHistory.push('/');
+  BrowserRouter.push('/');
 }
 
 // this requireAuth function is the simple if statement that will be run each time a path that requires authenticated users is tried to be accessed
@@ -67,6 +68,7 @@ function clearAccessToken() {
 // essentially saying taking out the + signs in the path and replacing them with whitespace.
 function getParameterByName(name) {
   let match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
+  console.log(match);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 

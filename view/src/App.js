@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BasicGen from "./pages/BasicGen";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
+// import SignUp from "./pages/SignUp";
+// import SignIn from "./pages/SignIn";
+import LandingPage from './pages/Landing/landingPage.js';
 import MyProjects from "./pages/MyProjects";
-import css from "./App.css";
+// import css from "./App.css";
 
 function setBackground () {
   console.log( window.location.pathname );
@@ -21,9 +22,9 @@ const App = () => (
   <Router>
     <div style={setBackground()}>
       <Switch>
-        <Route exact path="/" component={SignIn} />
-        <Route exact path="/signin" component={SignIn} />
-        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/" component={LandingPage} />
+        {/* <Route exact path="/signin" component={LandingPage} /> */}
+        {/* <Route exact path="/signup" component={SignUp} /> */}
         <Route exact path="/home" component={BasicGen} />
         <Route exact path="/myprojects" component={MyProjects} />
       </Switch>

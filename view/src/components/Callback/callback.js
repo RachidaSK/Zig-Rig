@@ -1,10 +1,8 @@
 import {Component} from 'react';
+// import '../Auth/Auth';
 import {setIdToken, setAccessToken} from '../Auth/Auth';
 
 class CallBack extends Component {
-    constructor() {
-        super();
-    };
 
     componentDidMount() {
         setAccessToken();
@@ -15,6 +13,7 @@ class CallBack extends Component {
     render() {
         return null;
     };
+
 };
 
 export default CallBack;
