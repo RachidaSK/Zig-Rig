@@ -1,16 +1,16 @@
-.addNewDraw {
-    background-color: rgb(34, 34, 34);
+.contactSubmit {
+    float: right;
+    background-color: rgb(94, 142, 165);
     color: white;
     border: 1px solid white;
     border-radius: 8px;
-    padding: 10px 34px;
+    padding: 10px 44px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 4%;
-    margin-left: 12px;
     font-size: 18px;
+    margin-bottom: 30px;
 }
 
-.addNewDraw:hover {
+.contactSubmit:hover {
     background-color: rgb(185, 185, 185);
     border-color: black;
     cursor: pointer;

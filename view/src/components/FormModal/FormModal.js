@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Column } from "../../components/Grid";
+import { Row, Column } from "../Grid";
 import { InputModal } from "../InputModal";
 import LegsButtons from "../LegsButtons";
 import AddButtonModal from "../AddButtonModal";

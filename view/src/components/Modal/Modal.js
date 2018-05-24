@@ -5,7 +5,7 @@ import FormModal from "../FormModal"
 import CloseModalButton from "../CloseModalButton";
 
 const Modal = props => (
-    <div className="addDrawModal">
+    <div className="addDrawModal animated fadeIn">
         <Container fluid>
             <Row>
                 <CloseModalButton onClick={props.handleClose}/>

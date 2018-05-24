@@ -9,37 +9,28 @@
     width: 80%;
     opacity: .75;
     border-radius: 15px;
-    padding: 65px 0px;
+    padding: 65px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 75px;
+    margin-top: 40px;
+    margin-bottom: 80px;
     box-shadow: 3px 4px 5px #3b3b3b;
 }
 
 /* Generator Div */
-.genDiv {
-    margin: -580px 0px 0px 650px;
+
+.generatorImage {
+    height: 305px;
 }
 
 /* Current Leg Totals */
-.currentLegTotalsModalHome {
-    margin-left: 12%;
+.currentLegTotalsHome {
     color: white;
     font-size: 20px;
 }
 
 /* Template Examples */
-hr {
-    float: left;
-    width: 43.5%;
-    margin-left: 7%;
-}
-
-#templatesDiv {
-    margin-left: 7%;
-}
-
 #loadTemplatesHeader {
     color: white;
 }
@@ -50,194 +41,9 @@ hr {
  {
     background: rgb(94, 142, 165);
     color: white;
-    width: 23%;
     padding: 52px 25px;
+    width: 115%;
     font-size: 18px;
     border: 1px solid white;
     border-radius: 5px;
-    margin-bottom: 25px;
-}
-
-.loadTemplateExample2 {
-    float: right;
-    margin: -156px 325px 0px 0px;
-}
-
-.loadTemplateExample3 {
-    float: right;
-    margin: -156px 137px 0px 0px;
-}
-
-/* Media Queries */
-@media only screen and (max-width: 1400px) {
-    .genDiv {
-        margin: -614px 0px 0px 545px;
-    }
-    .saveButton,
-    .addNewDraw {
-        padding: 9px 30px;
-    }
-    .pdfButton {
-        padding: 7px 30px;
-    }
-    .loadTemplateExample1,
-    .loadTemplateExample2,
-    .loadTemplateExample3 {
-        font-size: 15px;
-    }
-    .loadTemplateExample2 {
-        margin: -152px 288px 0px 0px;
-    }
-    .loadTemplateExample3 {
-        margin: -152px 128px 0px 0px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    #account {
-        margin-left: 85%;
-    }
-    .saveButton,
-    .addNewDraw,
-    .pdfButton {
-        font-size: 15px;
-        padding: 9px 20px;
-    }
-    .pdfButton {
-        padding: 7px 20px;
-    }
-    .addNewDraw {
-        padding: 9px 20px;
-    }
-    .inputProject {
-        height: 48px;
-        width: 71.5%;
-    }
-    .genDiv {
-        margin: -550px 0px 0px 420px;
-    }
-    .loadTemplateExample1,
-    .loadTemplateExample2,
-    .loadTemplateExample3 {
-        font-size: 14px;
-        width: 25%;
-        padding: 40px 20px;
-    }
-    .loadTemplateExample2 {
-        margin: -127px 231px 0px 0px;
-    }
-    .loadTemplateExample3 {
-        margin: -127px 90px 0px 0px;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    #account {
-        margin-left: 82%;
-    }
-    .generatorImage {
-        height: 300px;
-    }
-    .genDiv {
-        margin: -493px 0px 0px 380px;
-    }
-    .homeContainer {
-        padding: 50px 0px;
-    }
-    .saveButton {
-        margin-left: 7.5%;
-    }
-    .inputProject {
-        height: 44px;
-        width: 49.5%;
-        margin-left: 7.5%;
-    }
-    .currentLegTotalsModalHome {
-        margin-left: 8%;
-    }
-    h4 {
-        font-size: 15px;
-    }
-    .loadTemplateExample1,
-    .loadTemplateExample2,
-    .loadTemplateExample3 {
-        width: 14%;
-        font-size: 12px;
-        padding: 30px 16px;
-    }
-    .loadTemplateExample2 {
-        margin: -104px 503px 0px 0px;
-    }
-    .loadTemplateExample3 {
-        margin: -104px 391px 0px 0px;
-    }
-    #loadTemplatesHeader {
-        margin: 0px 350px 15px 0px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    #account {
-        margin-left: 77%;
-    }
-    .saveButton {
-        margin-left: 4.5%;
-    }
-    .homeContainer {
-        padding: 26px 0px;
-    }
-    .inputProject {
-        height: 42px;
-        width: 48.5%;
-        margin-left: 4.5%;
-        margin-top: -8px;
-    }
-    .generatorImage {
-        height: 250px;
-    }
-    .genDiv {
-        margin: -447px 0px 0px 278px;
-    }
-    .saveButton,
-    .addNewDraw,
-    .pdfButton {
-        font-size: 11px;
-        padding: 7px 16px;
-        border-radius: 7px;
-    }
-    .addNewDraw {
-        margin-left: 8px;
-    }
-    .pdfButton {
-        padding: 5.5px 16px;
-        margin-left: 8px;
-    }
-    .loadTemplateExample1,
-    .loadTemplateExample2,
-    .loadTemplateExample3 {
-        width: 12%;
-        font-size: 10px;
-        padding: 17px 10px;
-    }
-    .loadTemplateExample2 {
-        margin: -89px 404px 0px 0px;
-    }
-    .loadTemplateExample3 {
-        margin: -89px 325px 0px 0px;
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    #account {
-        margin-left: 58%;
-    }
-    #miniLogo {
-        width: 50px;
-        margin: -12px 0px 0px 5px;
-        float: left;
-    }
-}
-
-@media only screen and (max-width: 375px) {
-
 }

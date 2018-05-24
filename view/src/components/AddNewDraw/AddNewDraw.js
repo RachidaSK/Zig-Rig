@@ -2,9 +2,9 @@ import React from "react";
 import "./AddNewDraw.css";
 
 const AddNewDraw = props => (
-  <span className="addNewDraw" {...props}>
+  <button className="addNewDraw" {...props}>
     Add New Draw
-  </span>
+  </button>
 );
 
 export default AddNewDraw;
