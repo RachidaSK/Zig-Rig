@@ -156,7 +156,7 @@ class FormModal extends React.Component {
                 <Row>
                     <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
                     <b className="currentLegTotalsModal">L1:</b> <i>0</i>  <b>L2:</b> <i>0</i>  <b>L3:</b> <i>0</i>  <b>N:</b> <i>0</i>
-                    <AddButtonModal />
+                    <AddButtonModal onClick={this.props.saveHandler}/>
                 </Row>
             </div>
 
