@@ -9,11 +9,7 @@ const CLIENT_ID = 'b9cDojrEVWLGw1noSN2oLkPppsUjZG-C';
 const CLIENT_DOMAIN = 'zigrig.auth0.com';
 let REDIRECT;
 if (process.env.NODE_ENV == "production") {
-<<<<<<< HEAD
 	REDIRECT = 'pickled-malamute-15436.herokuapp.com/home';
-=======
-	REDIRECT = 'https://pickled-malamute-15436.herokuapp.com/home';
->>>>>>> 23f68cecc33062c382aac86fde46711837ee9b02
 } else {
 	REDIRECT = 'http://localhost:3000/home';
 }
