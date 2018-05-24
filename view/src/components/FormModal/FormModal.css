@@ -1,11 +1,45 @@
-#selectLegsLabel {
+ #selectLegsLabel {
+    font-size: 18px;
     margin-left: 15px;
+    margin-top: -5px;
+    color: crimson;
+}
+
+#l1 {
+    margin-left: 17px; 
 }
 
 .currentLegTotalsModal {
     margin-left: 15px;
+    color: crimson;
 }
 
 .checkbox {
-    display: inline-block;
+    margin-top: -16px;
+} 
+
+#phase1 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: crimson;
 }
+
+#type1 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: crimson;
+}
+
+#current {
+    font-size: 18px;
+    color: crimson;
+}
+
+#L3 {
+    margin-left: -25px;
+}
+
+#L2 {
+    margin-left: -20px;
+}
+

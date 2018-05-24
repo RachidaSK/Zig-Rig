@@ -9,7 +9,7 @@ const Modal = props => (
         <Container fluid>
             <Row>
                 <CloseModalButton onClick={props.handleClose}/>
-                <b>Add New Draw Below:</b>
+                <b id="newDraw">New Draw:</b>
             </Row>
             <br />
            <FormModal handleClose={props.handleClose} />
