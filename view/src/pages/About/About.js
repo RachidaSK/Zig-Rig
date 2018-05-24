@@ -33,7 +33,7 @@ class About extends Component {
                                                     </a>
                                                 </Column>
                                                 <Column size="lg-2">
-                                                    <a href="https://www.linkedin.com/in/" target="_blank">
+                                                    <a href="https://www.linkedin.com/in/michael-gerov-207a0727/" target="_blank">
                                                         <div className="linkedInIcon"></div>
                                                     </a>
                                                 </Column>
@@ -63,7 +63,7 @@ class About extends Component {
                                         <Row>
                                             <div className="chrisIcons">
                                                 <Column size="lg-2">
-                                                    <a href="https://github.com/mhgerov" target="_blank">
+                                                    <a href="https://github.com/houckchris" target="_blank">
                                                         <div className="githubIcon"></div>
                                                     </a>
                                                 </Column>
@@ -98,12 +98,12 @@ class About extends Component {
                                         <Row>
                                             <div className="willIcons">
                                                 <Column size="lg-2">
-                                                    <a href="https://github.com/mhgerov/Zig-Rig" target="_blank">
+                                                    <a href="https://github.com/will-miller93" target="_blank">
                                                         <div className="githubIcon"></div>
                                                     </a>
                                                 </Column>
                                                 <Column size="lg-2">
-                                                    <a href="https://www.linkedin.com/in/" target="_blank">
+                                                    <a href="https://www.linkedin.com/in/orit-freud-9437ba131/" target="_blank">
                                                         <div className="linkedInIcon"></div>
                                                     </a>
                                                 </Column>
@@ -170,12 +170,12 @@ class About extends Component {
                                         <Row>
                                             <div className="oritIcons">
                                                 <Column size="lg-2">
-                                                    <a href="https://github.com/mhgerov/Zig-Rig" target="_blank">
+                                                    <a href="https://github.com/orit1989" target="_blank">
                                                         <div className="githubIcon"></div>
                                                     </a>
                                                 </Column>
                                                 <Column size="lg-2">
-                                                    <a href="https://www.linkedin.com/in/" target="_blank">
+                                                    <a href="https://www.linkedin.com/in/orit-freud-9437ba131/" target="_blank">
                                                         <div className="linkedInIcon"></div>
                                                     </a>
                                                 </Column>

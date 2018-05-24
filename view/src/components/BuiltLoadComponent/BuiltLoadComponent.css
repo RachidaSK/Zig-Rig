@@ -1,0 +1,12 @@
+.builtComponentDiv {
+    background-color: rgb(34, 34, 34);
+    border: 2px solid white;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 3px 4px 5px #3b3b3b;
+}
+
+.builtComponentColumn {
+    margin-left:  30px;
+}
