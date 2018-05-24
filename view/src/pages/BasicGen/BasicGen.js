@@ -106,7 +106,46 @@ class BasicGen extends Component {
 		// });
 	}
 
+    calculateLoad=()=> {
+        let genLoad = [0,0,0];
+        console.log(this.state.project.loads)
+        for (let i=0;i<this.state.project.loads.length;i++) {
+            let ampsAdded = [0,0,0];
+            let load = this.state.project.loads[i];
+            let current = Number(load.current);
+            console.log(load.phase)
+            if (load.phase==='Single Phase') {
+                console.log('executing single-phase');
+                console.log('connection:'+load.connections);
+                if (load.connections.L1) {
+                    ampsAdded[0]=current;
+                } else if (load.connections.L2) {
+                    ampsAdded[1]=current;
+                } else {
+                    ampsAdded[2]=current;
+                }
+                console.log('Amps to be added: '+ampsAdded)
+            } else { //it's 3-phase
+                console.log("Executing 3-phase calc");
+                ampsAdded = [current/3,current/3,current/3];
+                console.log('Amps to be added: '+ampsAdded)
+            }	
+            //Multiply by PF constant if inductive load
+            if (load.type=='Inductive') {
+                console.log('inductive mode happening');
+                ampsAdded = ampsAdded.map(x => 0.8*x);
+            }
+            for (let j=0;j<genLoad.length;j++) {
+                genLoad[j]+=ampsAdded[j];
+            }
+        }
+        console.log("Final Load: "+genLoad)
+        return genLoad;
+    }
+
+
     render() {
+        let loads = this.calculateLoad();
         return [
             this.state.modalVisible ? (
 				<Modal
@@ -167,10 +206,9 @@ class BasicGen extends Component {
                                         <div className="currentLegTotalsHome">
                                             <h4>Current Leg Totals:</h4>
                                             <ul>
-                                                <h5>L1:</h5>
-                                                <h5>L2:</h5>
-                                                <h5>L3:</h5>
-                                                <h5>N:</h5>
+                                                <h5>L1: {loads[0]}</h5>
+                                                <h5>L2: {loads[1]}</h5>
+                                                <h5>L3: {loads[2]}</h5>
                                             </ul>
                                         </div>
                                     </Column>    
