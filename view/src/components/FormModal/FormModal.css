@@ -2,7 +2,7 @@
     font-size: 18px;
     margin-left: 15px;
     margin-top: -5px;
-    color: crimson;
+    color: grey;
 }
 
 #l1 {
@@ -11,7 +11,7 @@
 
 .currentLegTotalsModal {
     margin-left: 15px;
-    color: crimson;
+    color: grey;
 }
 
 .checkbox {
@@ -22,29 +22,45 @@
 #phase1 {
     /* margin-bottom: 20px; */
     font-size: 18px;
-    color: crimson;
+    color: grey;
+    margin-right: 9px;
 }
 
-.phase2 .checkbox-control {
-    margin-right: 9px;
+.phase2.checkbox-control {
+    margin-right: 2px;
+}
+
+.type2.checkbox-control {
+    margin-right: 2px;
 }
 
 #type1 {
     /* margin-bottom: 20px; */
     font-size: 18px;
-    color: crimson;
+    color: grey;
+    margin-right: 47px;
 }
 
 #current {
     font-size: 18px;
-    color: crimson;
+    color: grey;
 }
 
 #L3 {
     margin-left: -115px;
+    margin-right: 2px;
 }
 
 #L2 {
     margin-left: -15px;
+    margin-right: 2px;
+}
+
+#L1 {
+    margin-right: 2px;
+}
+
+.checkbox-label3 {
+    margin-right: 21px;
 }
 

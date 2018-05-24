@@ -88,7 +88,7 @@ class FormModal extends React.Component {
                         </label>
                         <label className="checkbox">
                             <input type="radio" className="phase2 checkbox-control" checked={this.state.phase === '3 Phase'} value="3 Phase" onChange={this.switchPhase}/>
-                            <span className="checkbox-label">3 Phase</span>
+                            <span className="checkbox-label">Three Phase</span>
                         </label>
                     </Column>
                     <Column size="lg-4">
@@ -97,7 +97,7 @@ class FormModal extends React.Component {
                         </label>
                         <label className="checkbox">
                             <input type="radio" className="type2 checkbox-control" checked={this.state.type === 'Resistive'} value="Resistive" onChange={this.switchType}/>
-                            <span className="checkbox-label">Resistive</span>
+                            <span className="checkbox-label3">Resistive</span>
                         </label>
                         <label className="checkbox">
                             <input type="radio" className="type2 checkbox-control" checked={this.state.type === 'Inductive'} value="Inductive" onChange={this.switchType}/>
