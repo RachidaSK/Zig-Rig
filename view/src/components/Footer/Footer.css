@@ -1,0 +1,77 @@
+#footer {
+    background-color: rgb(34, 34, 34);
+    border-top: 2px solid rgb(201, 201, 201);
+    box-shadow: 3px 4px 5px #3b3b3b;
+}
+
+#footerLogo{
+    height: 200px;
+    margin: 30px 0 0 225px;
+}
+
+#upArrow {
+    height: 75px;
+    width: auto;
+    z-index: 20;
+}
+
+.arrowUp{
+    background-color: rgb(133, 133, 133);
+    padding: 32px 0px 130px 26px;
+    margin: 0px 40px 0px -16px;
+    z-index: 10;
+}
+
+.zrCopy {
+    margin-left: 40%;
+}
+
+.githubIcon,
+.linkedInIcon,
+.instagramIcon,
+.twitterIcon {
+    width: 30px;
+    max-width: 40px;
+    background-image: url("/images/github.png");
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+}
+
+.socialMediaIcons {
+    margin-left: 30px;
+}
+
+.linkedInIcon {
+    background-image: url("/images/linkedin.png");
+}
+
+.instagramIcon {
+    background-image: url("/images/instagram.png");
+}
+
+.twitterIcon {
+    background-image: url("/images/twitter.png");
+}
+
+.copyright {
+    text-align: center;
+}
+
+#homeFooter,
+#aboutZR,
+#aboutTeam,
+#terms,
+#contactUs,
+#faq {
+    color: rgb(83, 83, 83);
+    font-size: 16px;
+}
+
+.aboutContent {
+    margin-top: 30px;
+}
+
+.footerHeaders {
+    font-size: 25px;
+}

@@ -2,9 +2,10 @@ import React from "react";
 import "./AddButtonModal.css";
 
 const AddButtonModal = props => (
-  <span className="addButtonModal" {...props}>
-    Save 
-  </span>
+  <button className="addButtonModal" {...props}>
+    Save
+  </button>
+
 );
 
 export default AddButtonModal;
