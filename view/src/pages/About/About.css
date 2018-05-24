@@ -1,0 +1,30 @@
+.aboutWrapper {
+    background-color: rgb(177, 177, 177);
+}
+
+p {
+    text-align: justify;
+}
+
+.michaelDiv,
+.oritDiv,
+.willDiv,
+.chrisDiv,
+.carolineDiv {
+    background-color: rgb(114, 114, 114);
+    padding: 40px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 4px 5px #373737;
+}
+
+.michaelDiv,
+.chrisDiv,
+.willDiv {
+    margin: 40px 8px 73px 92px;
+}
+
+.oritDiv,
+.carolineDiv {
+    margin: 40px 92px 73px 8px;
+}

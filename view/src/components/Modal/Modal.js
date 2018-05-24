@@ -4,24 +4,21 @@ import "./Modal.css";
 import FormModal from "../FormModal"
 import CloseModalButton from "../CloseModalButton";
 
-class Modal extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-		render() {
-			return (
-				<div className="addDrawModal">
-						<Container fluid>
-								<Row>
-										<CloseModalButton onClick={this.props.handleClose}/>
-										<b>Add New Draw Below:</b>
-								</Row>
-								<br />
-							 <FormModal saveHandler={this.props.saveHandler} handleClose={this.props.handleClose} />
-						</Container>
-				</div>
-			);
-		}
-};
+
+const Modal = props => (
+    <div className="addDrawModal">
+        <Container fluid>
+            <Row>
+                <CloseModalButton onClick={props.handleClose}/>
+                <b id="newDraw">New Draw:</b>
+            </Row>
+            <br />
+           <FormModal
+                saveHandler={props.saveHandler} 
+                handleClose={props.handleClose}
+            />
+        </Container>
+    </div>
+);
 
 export default Modal;

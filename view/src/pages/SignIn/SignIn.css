@@ -9,12 +9,13 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 130px;
+    margin-bottom: 150px;
 }
  
  /* Sign In Button */
-.btn {
+/* .btn {
     margin-right: 47%;
-}
+} */
 
 #signInUpLogo {
     width: 250px;

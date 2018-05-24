@@ -9,37 +9,28 @@
     width: 80%;
     opacity: .75;
     border-radius: 15px;
-    padding: 65px 0px;
+    padding: 65px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 75px;
+    margin-top: 40px;
+    margin-bottom: 80px;
     box-shadow: 3px 4px 5px #3b3b3b;
 }
 
 /* Generator Div */
-.genDiv {
-    margin: -580px 0px 0px 650px;
+
+.generatorImage {
+    height: 305px;
 }
 
 /* Current Leg Totals */
-.currentLegTotalsModalHome {
-    margin-left: 12%;
+.currentLegTotalsHome {
     color: white;
     font-size: 20px;
 }
 
 /* Template Examples */
-hr {
-    float: left;
-    width: 43.5%;
-    margin-left: 7%;
-}
-
-#templatesDiv {
-    margin-left: 7%;
-}
-
 #loadTemplatesHeader {
     color: white;
 }
@@ -50,20 +41,9 @@ hr {
  {
     background: rgb(94, 142, 165);
     color: white;
-    width: 23%;
     padding: 52px 25px;
+    width: 115%;
     font-size: 18px;
     border: 1px solid white;
     border-radius: 5px;
-    margin-bottom: 25px;
-}
-
-.loadTemplateExample2 {
-    float: right;
-    margin: -151px 325px 0px 0px;
-}
-
-.loadTemplateExample3 {
-    float: right;
-    margin: -151px 137px 0px 0px;
 }

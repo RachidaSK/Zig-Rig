@@ -1,7 +1,7 @@
 #nav-bar {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(34, 34, 34);
     padding: 22px;
     border-bottom: 2px solid rgb(214, 214, 214);
     margin-bottom: 40px;
@@ -9,9 +9,13 @@
     padding-bottom: 40px;
 }
 
-#account {
+.account {
     color: white;
-    margin-left: 89%;
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: white;
+    text-decoration: none;
 }
 
 #miniLogo {
@@ -22,23 +26,43 @@
 
 .dropdown {
     float: right;
-    margin-top: -12px;
-    
+    margin-top: -12px;  
 }
 
 .dropdown-item {
-    color: black;
+    color: rgb(34, 34, 34);
     margin-right: 22px;
     width: 100%;
     padding: 8px;
     font-size: 16px;
     border-bottom: none;
+    background-color: rgb(34, 34, 34);
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .dropdown-toggle {
     border: none !important;
+    background-color: rgb(34, 34, 34) !important;
 }
 
 .btn .caret {
     margin-left: 3px;
 }
+
+.dropdown-menu {
+    padding-left: 1px;
+    background-color: rgb(34, 34, 34); 
+    border-color: white !important;
+}
+
+.menu {
+    color: white;
+}
+
+.menu:hover {
+    color: gray;
+}
+
+
