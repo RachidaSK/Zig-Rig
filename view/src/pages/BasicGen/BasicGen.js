@@ -71,7 +71,7 @@ class BasicGen extends Component {
 		let newState = this.state;
 		console.log(load);
 		console.log(newState);
-		newState.project.loads = newState.project.loads.concat(load);
+		newState.project.loads.push(load);
 		console.log(newState);
 		this.setState(newState);
 
