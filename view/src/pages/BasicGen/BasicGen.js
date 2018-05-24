@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import jwt_decode from 'jwt-decode';
 import NavBar from "../../components/NavBar";
 import AddNewDraw from "../../components/AddNewDraw";
 import SaveButton from "../../components/SaveButton";
@@ -6,6 +7,9 @@ import { Row, Column, Container } from "../../components/Grid";
 import { InputProject } from "../../components/InputProject";
 import Modal from "../../components/Modal";
 import {PDF} from '../../components/PDF';
+import '../../components/Auth/Auth';
+import { setIdToken, setAccessToken } from "../../components/Auth/Auth";
+
 import Footer from "../../components/Footer";
 
 class BasicGen extends Component {
@@ -25,6 +29,24 @@ class BasicGen extends Component {
 		require( "./BasicGen.css" );
 	}
 
+    componentDidMount () {
+        // setIdToken();
+        if (localStorage.getItem('id_token') > 0) {
+            let uid = localStorage.getItem('id_token');
+            console.log(uid);
+        } else {
+            setIdToken();
+            setAccessToken();
+            let token = localStorage.getItem('id_token');
+            let userInfo = jwt_decode(token);
+            let userId = userInfo.sub;
+            console.log(token);
+            console.log(userInfo);
+            console.log(userId);
+        }
+    }
+
+	
     handleInputChange = event => {
         const {project, value} = event.target;
         this.setState({

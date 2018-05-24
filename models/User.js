@@ -14,7 +14,11 @@ const userSchema = new Schema({
       type: String,
       trim: true,
       required: "Password is Required",
-    }
+    },
+
+    // uniqueId: {
+    //   type: String
+    // }
     
   });
 
