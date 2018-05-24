@@ -2,6 +2,7 @@ import React from "react";
 import "./PDF.css";
 import jsPDF from "jspdf";
 // import Project from "../../../../models/Project.js";
+// import BasicGen from "../../pages/BasicGen/BasicGen.js";
 
 // DUMMY Project OBJECT STANDING IN FOR DATABASE OBJECT FOR PDF GENERATOR
 const Project = {
@@ -27,7 +28,7 @@ const Project = {
 };
 
 // CONSTANTS GRABBING MODEL DATA
-const userName = Project.user;
+const userName = Project.user.username;
 const projectName = Project.name;
 const projectLoads = Project.loads;
 
@@ -141,7 +142,7 @@ function HTMLtoPDF(){
         top: 50,
         left: 60,
         width: 545
-      };
+    };
     pdf.fromHTML(
           source // HTML string or DOM elem ref.
           , margins.left // x coord
