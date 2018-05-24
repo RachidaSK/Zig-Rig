@@ -3,7 +3,7 @@ import "./AddButtonModal.css";
 
 const AddButtonModal = props => (
   <span className="addButtonModal" {...props}>
-    + Add
+    Save 
   </span>
 );
 
