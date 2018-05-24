@@ -16,8 +16,8 @@ class BasicGen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: "New Project",
 			project: {
+				name: "New Project",
 				generator: {
 					capacity: null,
 				},
@@ -48,10 +48,10 @@ class BasicGen extends Component {
 
 	
     handleInputChange = event => {
-        const {project, value} = event.target;
-        this.setState({
-            [project]: value
-        });
+        const { value } = event.target;
+        const { project } = this.state;
+        project.name = value;
+        this.setState({ project });
     }
 
 	handleAddNewDraw = event => {
@@ -68,19 +68,51 @@ class BasicGen extends Component {
 		});
 	}
 	//BasicGen -> Modal -> FormModal -> AddButtonModal
-	handleSubmitAddDraw = () => {
-		this.state.project.loads = this.state.project.loads.concat({
-			name: "Dummy Load",
-			current: 20,
-			phase: "single",
-			connection: "L1",
-			type: "resistive",
-		});
+	addNewLoad = (load) => {
+		// this.state.project.loads = this.state.project.loads.concat({
+		// 	name: "Dummy Load",
+		// 	current: 20,
+		// 	phase: "single",
+		// 	connection: "L1",
+		// 	type: "resistive",
+		// });
+		// ___________________LOADS UPDATE FUNCTION
+		// const { loads } = this.state.project;
+		// const newLoads = loads.concat(load);
+
+		// this.setState({
+		// 	project: {
+		// 		loads: newLoads
+		// 	}
+		// });
+		// ________________________________________
+
+		let newState = this.state;
+		console.log(load);
+		console.log(newState);
+		newState.project.loads.push(load);
+		console.log(newState);
+		this.setState(newState);
+
+
+		// const { loads } = this.state.project;
+		// const newLoads = loads.concat(load);
+
+		// this.setState({
+		// 	project: {
+		// 		loads: newLoads
+		// 	}
+		// });
 	}
 
     render() {
         return [
-            this.state.modalVisible ? <Modal handleClose={this.toggleModalVisible} /> : null,
+            this.state.modalVisible ? (
+				<Modal
+					saveHandler={this.addNewLoad} 
+					handleClose={this.toggleModalVisible}
+				/>
+			) : null,
             <div className={`pageWrapper ${this.state.modalVisible && "blurred"}`}>
                 <NavBar />
                 <Container fluid>
@@ -103,9 +135,9 @@ class BasicGen extends Component {
                                 <Row>
                                     <Column size="lg-12">
                                         <InputProject
-                                            value={this.state.project}
+                                            value={this.state.project.name}
                                             onChange={this.handleInputChange}
-                                            name="project"
+                                            name="name"
                                             placeholder="Project Title"
                                         />
                                     </Column>

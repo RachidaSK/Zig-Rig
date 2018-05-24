@@ -13,7 +13,10 @@ const Modal = props => (
                 <b id="newDraw">New Draw:</b>
             </Row>
             <br />
-           <FormModal handleClose={props.handleClose} />
+           <FormModal
+                saveHandler={props.saveHandler} 
+                handleClose={props.handleClose}
+            />
         </Container>
     </div>
 );
