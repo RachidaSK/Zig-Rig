@@ -141,7 +141,7 @@ function HTMLtoPDF(){
         top: 50,
         left: 60,
         width: 545
-      };
+    };
     pdf.fromHTML(
           source // HTML string or DOM elem ref.
           , margins.left // x coord

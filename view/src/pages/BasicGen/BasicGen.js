@@ -11,8 +11,9 @@ class BasicGen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: null,
 			project: {
+
+				name: "New Project",
 				generator: {
 					capacity: null,
 				},
@@ -25,10 +26,13 @@ class BasicGen extends Component {
 	}
 
 	handleInputChange = event => {
-		const {name, value} = event.target;
-		this.setState({
-			[name]: value
-		});
+		console.log(event.target);
+		// Commented out temporarily
+		// const {value} = event.target;
+		// this.setState({
+		// 	project.name = value;
+
+		// });
 	}
 
 	handleAddNewDraw = event => {
@@ -53,14 +57,33 @@ class BasicGen extends Component {
 		// 	connection: "L1",
 		// 	type: "resistive",
 		// });
-		const { loads } = this.state.project;
-		const newLoads = loads.concat(load );
+		// ___________________LOADS UPDATE FUNCTION
+		// const { loads } = this.state.project;
+		// const newLoads = loads.concat(load);
 
-		this.setState({
-			project: {
-				loads: newLoads
-			}
-		});
+		// this.setState({
+		// 	project: {
+		// 		loads: newLoads
+		// 	}
+		// });
+		// ________________________________________
+
+		let newState = this.state;
+		console.log(load);
+		console.log(newState);
+		newState.project.loads = newState.project.loads.concat(load);
+		console.log(newState);
+		this.setState(newState);
+
+
+		// const { loads } = this.state.project;
+		// const newLoads = loads.concat(load);
+
+		// this.setState({
+		// 	project: {
+		// 		loads: newLoads
+		// 	}
+		// });
 	}
 
 	render() {
@@ -93,7 +116,7 @@ class BasicGen extends Component {
 							<Row>
 								<Column size="lg-7">
 									<InputProject
-										value={this.state.name}
+										value={this.state.project.name}
 										onChange={this.handleInputChange}
 										name="project"
 										placeholder="Project Title"
