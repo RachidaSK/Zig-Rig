@@ -58,7 +58,9 @@ class FormModal extends React.Component {
     switchConnection = event => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
+          connections: {
+            [name]: value
+          }
         });
     };
 

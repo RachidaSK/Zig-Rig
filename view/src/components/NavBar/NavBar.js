@@ -28,8 +28,8 @@ export default class NavBar extends React.Component {
         <span className="caret"></span>
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem ><a className="menu" href="">About</a></DropdownItem>
             <DropdownItem><a className="menu" href="/myprojects">My Projects</a></DropdownItem>
+            <DropdownItem ><a className="menu" href="">Settings</a></DropdownItem>
             <DropdownItem divider />
             <DropdownItem><a className="menu" href="/signin">Logout</a></DropdownItem>
           </DropdownMenu>
