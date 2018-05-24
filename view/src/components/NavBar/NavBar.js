@@ -1,6 +1,7 @@
 import React from "react";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import "./NavBar.css"
+import { logout } from "../Auth/Auth";
 
 export default class NavBar extends React.Component {
     constructor(props) {
@@ -31,7 +32,7 @@ export default class NavBar extends React.Component {
             <DropdownItem><a className="menu" href="/myprojects">My Projects</a></DropdownItem>
             <DropdownItem ><a className="menu" href="">Settings</a></DropdownItem>
             <DropdownItem divider />
-            <DropdownItem><a className="menu" href="/signin">Logout</a></DropdownItem>
+            <DropdownItem><a className="menu" href="/" onClick={logout}>Logout</a></DropdownItem>
           </DropdownMenu>
         </Dropdown>
         </nav>
