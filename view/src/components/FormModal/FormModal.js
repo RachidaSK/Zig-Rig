@@ -3,7 +3,6 @@ import { Row, Column } from "../Grid";
 import { InputModal } from "../InputModal";
 import LegsButtons from "../LegsButtons";
 import AddButtonModal from "../AddButtonModal";
-import Select from 'react-select';
 
 
 class FormModal extends React.Component {
