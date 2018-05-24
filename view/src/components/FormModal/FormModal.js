@@ -14,9 +14,11 @@ class FormModal extends React.Component {
         phase: "",
         current: "",
         type: "",
-        L1: null,
-        L2: null,
-        L3: null
+        connections: {
+            L1: null,
+            L2: null,
+            L3: null
+        } 
     }
 
     componentWillMount () {
@@ -54,18 +56,11 @@ class FormModal extends React.Component {
     };
 
     switchConnection = event => {
-        let selectType = event.target.value;
-		this.setState({
-			type: selectType,
-			selectType: null,
-		});
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
     };
-    
-    toggleCheckbox = event => {
-        let newState = [];
-		newState[event.target.name] = event.target.checked;
-		this.setState(newState);
-	};
 
     render() {
         return (
@@ -127,7 +122,6 @@ class FormModal extends React.Component {
                         Select Legs:
                     </label>
                     <br />
-                    <br />
                     <Column size="lg-2">
                     <label className="checkbox">
                             <input id="L1" type="radio" name="L1" className="checkbox-control" checked={this.state.phase === "3 Phase" || this.state.connections.L1} value="L1" onChange={this.switchConnection}/>
@@ -147,8 +141,8 @@ class FormModal extends React.Component {
                     <Column size="lg-2">
                     </Column>
                 </Row>  
-                <br /> 
-                <br />       
+                <br />  
+                <br />     
                 <Row >
                     <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
                     <b id="l1">L1:</b> <i>0</i>  <b>L2:</b> <i>0</i>  <b>L3:</b> <i>0</i>  <b>N:</b> <i>0</i>
