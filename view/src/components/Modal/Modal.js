@@ -4,6 +4,7 @@ import "./Modal.css";
 import FormModal from "../FormModal"
 import CloseModalButton from "../CloseModalButton";
 
+
 const Modal = props => (
     <div className="addDrawModal">
         <Container fluid>

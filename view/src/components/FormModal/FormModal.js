@@ -147,8 +147,11 @@ class FormModal extends React.Component {
                 <br />     
                 <Row >
                     <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
+
                     <b id="l1">L1:</b> <i>0</i>  <b>L2:</b> <i>0</i>  <b>L3:</b> <i>0</i>  <b>N:</b> <i>0</i>
                     <AddButtonModal />
+
+
                 </Row>
             </div>
 
