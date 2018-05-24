@@ -11,6 +11,8 @@
 
 .account {
     color: white;
+    margin-right: 35px;
+    padding: 11px 12px;
 }
 
 .btn.focus, .btn:focus, .btn:hover {
@@ -31,7 +33,7 @@
 
 .dropdown-item {
     color: rgb(34, 34, 34);
-    margin-right: 22px;
+    /* margin-right: 22px; */
     width: 100%;
     padding: 8px;
     font-size: 16px;
