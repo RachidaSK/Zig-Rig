@@ -5,6 +5,7 @@ import { login } from '../../components/Auth/Auth';
 class LandingPage extends Component {
 
     render() {
+				login();
         return (
             <div>
                 <h2>Welcome to Zig-Rig! Zig-Rig is a simple, easy-to-use online  planning tool for <br />

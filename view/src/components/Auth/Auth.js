@@ -7,9 +7,13 @@ const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'b9cDojrEVWLGw1noSN2oLkPppsUjZG-C';
 const CLIENT_DOMAIN = 'zigrig.auth0.com';
-const REDIRECT = 'http://localhost:3000/home';
-// const REDIRECT = 'http://localhost:3001/home';
-// const REDIRECT = 'https://pickled-malamute-15436.herokuapp.com/home';
+let REDIRECT;
+if (process.env.NODE_ENV == "production") {
+	REDIRECT = 'https://https://pickled-malamute-15436.herokuapp.com/home';
+} else {
+	REDIRECT = 'http://localhost:3000/home';
+}
+//const REDIRECT = 'http://localhost:3000/home';
 // const SCOPE = 'openid';
 // const AUDIENCE = 'https://zigrig.auth0.com/userinfo';
 
