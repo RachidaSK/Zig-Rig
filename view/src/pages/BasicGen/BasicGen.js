@@ -168,7 +168,10 @@ class BasicGen extends Component {
                                         >
                                         Add New Draw
                                         </AddNewDraw>
-                                        <PDF /> 
+                                        <PDF
+                                        projectName={this.state.name}
+                                        loads={this.state.loads}
+                                        /> 
                                     </Column>
                                 </Row>
                                 <br />
