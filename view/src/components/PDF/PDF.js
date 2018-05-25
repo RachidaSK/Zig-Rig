@@ -7,7 +7,7 @@ import BasicGen from "../../pages/BasicGen/BasicGen.js";
 // DUMMY Project OBJECT STANDING IN FOR DATABASE OBJECT FOR PDF GENERATOR
 const Project = {
     user: {
-        username: "Orit Freud"
+        username: "Chris Houck"
     },
     name: "Film Shoot",
     loads: [
@@ -18,7 +18,7 @@ const Project = {
             connections: "L1",
             type: "resistive"
         },{
-            name: "100k spotlight",
+            name: "100k fan",
             current: 100,
             phase: "Three",
             connections: "L1, L2, L3",
@@ -156,7 +156,7 @@ var pdfData =
 ;
 
 // A variable to (in the future) generate a filename if the Project name exists
-var pdfFileName = projectName ? ""+userName+"."+projectName+"":undefined;
+var pdfFileName = projectName ? ""+userName+"-"+projectName+".pdf":undefined;
 
 function HTMLtoPDF(){
     var pdf = new jsPDF('p', 'pt', 'letter');
