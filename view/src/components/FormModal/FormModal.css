@@ -1,44 +1,30 @@
  #selectLegsLabel {
     font-size: 18px;
-    margin-left: 15px;
-    margin-top: -5px;
-    color: grey;
-}
-
-#l1 {
-    margin-left: 17px; 
-}
-
-.currentLegTotalsModal {
-    margin-left: 15px;
     color: grey;
 }
 
 .checkbox {
     margin-top: -16px;
     display: inline-flex; 
+  
 } 
 
 #phase1 {
     /* margin-bottom: 20px; */
     font-size: 18px;
     color: grey;
-    margin-right: 9px;
-}
 
-.phase2.checkbox-control {
-    margin-right: 2px;
-}
-
-.type2.checkbox-control {
-    margin-right: 2px;
 }
 
 #type1 {
     /* margin-bottom: 20px; */
     font-size: 18px;
     color: grey;
-    margin-right: 47px;
+}
+
+#phase1,
+#selectLegsLabel {
+  
 }
 
 #current {
@@ -46,21 +32,7 @@
     color: grey;
 }
 
-#L3 {
-    margin-left: -115px;
-    margin-right: 2px;
-}
-
-#L2 {
-    margin-left: -15px;
-    margin-right: 2px;
-}
-
-#L1 {
-    margin-right: 2px;
-}
-
 .checkbox-label3 {
-    margin-right: 21px;
+  
 }
 

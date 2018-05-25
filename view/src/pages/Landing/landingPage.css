@@ -1,26 +1,30 @@
 .landingPageDiv {
-    border: solid;
-    border-color: white;
     background: black;
     width: 50%;
     height: 525px;
+    padding: 25px;
     opacity: .85;
     border-radius: 15px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 130px;
-    margin-bottom: 150px;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 .landingPageLogo {
-    padding-left: 319px;
-    padding-top: 40px;
-    height: 190px;
+    height: 230px;
+    width: auto;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .landingPageHeader {
-    margin-top: 0;
+    margin-top: -25px;
     /* padding-left: 230px;
     padding-right: 5px; */
     text-align: center;
@@ -29,7 +33,7 @@
     /* padding-bottom: 40px; */
 }
 
-p {
+.zigRigDef {
     align-content: center;
     text-align: center;
     color: white;
@@ -40,12 +44,14 @@ p {
 .authRedirect {
     text-align: center;
     opacity: 100;
-    
+    margin-top: -38px;
+    background-color: grey;
+    color: white;
+    border: 1px solid white;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.authRedirect:hover {
+    background-color: rgb(94, 142, 165);;
+    color: white;
+    border: 1px solid white;
 }

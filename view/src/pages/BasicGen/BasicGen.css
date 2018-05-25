@@ -6,21 +6,16 @@
 /* Div Container */
 .homeContainer {
     background: rgb(50, 72, 92);
-    width: 80%;
+    width: 90%;
     opacity: .75;
     border-radius: 15px;
-    padding: 65px;
+    padding: 50px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
     margin-bottom: 80px;
     box-shadow: 3px 4px 5px #3b3b3b;
-}
-
-/* Generator Div */
-.generatorImage {
-    height: 345px;
 }
 
 /* Current Leg Totals */
@@ -42,7 +37,150 @@
     color: white;
     padding: 52px 25px;
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid white;
     border-radius: 5px;
+    text-align: center;
+}
+
+.noLoads {
+    margin-left: 10px;
+    color: white;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1440px) {
+    .homeContainer {
+        padding: 30px 30px;
+        width: 95%;
+    }
+    .saveButton,
+    .addNewDraw,
+    .pdfButton {
+        padding: 8px 60px;
+        font-size: 15px;
+    }
+    .loadTemplateExample1,
+    .loadTemplateExample2,
+    .loadTemplateExample3 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .homeContainer {
+        padding: 25px 50px;
+    }
+    .saveButton,
+    .addNewDraw,
+    .pdfButton {
+        padding: 7px 43px;
+        font-size: 13px;
+    }
+    .loadTemplateExample1,
+    .loadTemplateExample2,
+    .loadTemplateExample3 {
+        font-size: 13px;
+        padding: 40px 18px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .saveButton,
+    .addNewDraw,
+    .pdfButton {
+        padding: 8px 94px;
+        font-size: 16px;
+    }
+    .loadTemplateExample1,
+    .loadTemplateExample2,
+    .loadTemplateExample3 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .homeContainer {
+        padding: 25px 50px;
+    }
+    .saveButton, 
+    .addNewDraw, 
+    .pdfButton {
+        padding: 8px 87px;
+        font-size: 16px;
+    }
+    .loadTemplateExample1,
+    .loadTemplateExample2,
+    .loadTemplateExample3 {
+        font-size: 15px;
+        padding: 40px 25px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .homeContainer {
+        padding: 30px 30px;
+    }
+    .saveButton,
+    .addNewDraw,
+    .pdfButton {
+        padding: 8px 65.5px;
+        font-size: 14px;
+    }
+    .addDrawModal {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .homeContainer {
+        padding: 30px 30px;
+    }
+    .saveButton,
+    .addNewDraw,
+    .pdfButton {
+        padding: 6px 48px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .saveButton,
+    .addNewDraw,
+    .pdfButton {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+    .inputProject {
+        height: 40px;
+        margin-top: -20px;
+    }
+    .loadTemplateExample1,
+    .loadTemplateExample2,
+    .loadTemplateExample3 {
+        font-size: 15px;
+        padding: 30px 15px;
+        margin-bottom: 20px;
+    }
+    .addDrawModal {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .addDrawModal {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .addDrawModal {
+        width: 80%;
+    }
 }

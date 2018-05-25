@@ -1,6 +1,6 @@
 #footer {
     background-color: rgb(34, 34, 34);
-    border-top: 2px solid rgb(201, 201, 201);
+    border-top: 2px solid rgb(182, 182, 182);
     box-shadow: 3px 4px 5px #3b3b3b;
 }
 
@@ -16,8 +16,8 @@
 
 .arrowUp{
     background-color: rgb(133, 133, 133);
-    padding: 35px 0px 176px 26px;
-    margin: 1px 39px 0px -16px;
+    padding: 35px 0px 182px 19px;
+    margin: 0px 39px 0px -16px;
 }
 
 .githubIcon,
@@ -65,4 +65,83 @@
 
 .footerHeaders {
     font-size: 25px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1400px) {
+    #footerLogo {
+        margin-left: 24px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #footerLogo {
+        height: 175px;
+        margin-left: 25px;
+    }
+    .arrowUp {
+        padding: 35px 0px 150px 19px;
+        margin: 0px 21px 0px -16px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .arrowUp {
+        display: none;
+    }
+    .copyright {
+        margin-right: 0;
+    }
+    #footerLogo {
+        margin-left: 19px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    #footerLogo {
+        margin-left: 392px;
+    }
+    .socialMediaIcons {
+        margin-left: 287px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #footerLogo {
+        height: 150px;
+        margin-left: 41%;
+    }
+    .socialMediaIcons {
+        margin-left: 224px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #footerLogo {
+        height: 150px;
+        margin-left: 39%;
+    }
+    .socialMediaIcons {
+        margin-left: 178px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #footerLogo {
+        height: 140px;
+        margin-left: 34%;
+    }
+    .socialMediaIcons {
+        margin-left: 104px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #footerLogo {
+        height: 130px;
+        margin-left: 31%;
+    }
+    .socialMediaIcons {
+        margin-left: 85px;
+    }
 }
