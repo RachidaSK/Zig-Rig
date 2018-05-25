@@ -4,8 +4,7 @@
     background-color: rgb(34, 34, 34);
     padding: 22px;
     border-bottom: 2px solid rgb(214, 214, 214);
-    margin-bottom: 40px;
-    box-shadow: 3px 4px 5px #3b3b3b;
+    box-shadow: 3px 4px 5px #444444;
     padding-bottom: 40px;
 }
 
@@ -22,13 +21,14 @@
 
 #miniLogo {
     width: 50px;
-    margin: -15px 0px 0px 16px;
+    margin: -15px 0px 0px 30px;
     float: left;
 }
 
 .dropdown {
     float: right;
-    margin-top: -12px;  
+    margin-top: -6px;
+    margin-right: 35px;
 }
 
 .dropdown-item {
