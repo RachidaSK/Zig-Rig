@@ -28,7 +28,7 @@ const BuiltLoadComponent = (props) => (
                         </Column>
                         <Column size="lg-4">
                             <div className="savedProjectCurrent">
-                                Current: {props.loadData.current}
+                                Current: {props.loadData.current*1}
                             </div>
                         </Column>
                     </Row>

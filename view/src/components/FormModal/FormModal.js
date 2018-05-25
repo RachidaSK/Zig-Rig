@@ -13,7 +13,7 @@ class FormModal extends React.Component {
         phase: "",
         current: "",
         type: "",
-        connections: {
+        legs: {
             L1: null,
             L2: null,
             L3: null
@@ -70,7 +70,7 @@ class FormModal extends React.Component {
     switchConnection = event => {
         const { name, value } = event.target;
         this.setState({
-          connections: {
+          legs: {
             [name]: value
           }
         });
@@ -138,18 +138,18 @@ class FormModal extends React.Component {
                     <br />
                     <Column size="lg-2">
                     <label className="checkbox">
-                            <input id="L1" type="radio" name="L1" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.connections.L1} value="L1" onChange={this.switchConnection}/>
+                            <input id="L1" type="radio" name="L1" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.legs.L1} value="L1" onChange={this.switchConnection}/>
                             <span className="checkbox-label">L1</span>
                         </label>
                     </Column>
                     <Column size="lg-2">
                     <label className="checkbox">
-                            <input id="L2" type="radio" name="L2" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.connections.L2} value="L2" onChange={this.switchConnection}/>
+                            <input id="L2" type="radio" name="L2" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.legs.L2} value="L2" onChange={this.switchConnection}/>
                             <span className="checkbox-label">L2</span>
                         </label>
                     </Column>
                     <label className="checkbox">
-                            <input id="L3" type="radio" name="L3" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.connections.L3} value="L3" onChange={this.switchConnection}/>
+                            <input id="L3" type="radio" name="L3" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.legs.L3} value="L3" onChange={this.switchConnection}/>
                             <span className="checkbox-label">L3</span>
                         </label>
                     <Column size="lg-2">

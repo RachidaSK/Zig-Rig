@@ -1,27 +1,27 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+// const userSchema = new Schema({
 
-    username: {
-      type: String,
-      trim: true,
-      required: "Username is Required"
-    },
+//     username: {
+//       type: String,
+//       trim: true,
+//       required: "Username is Required"
+//     },
 
-    password: {
-      type: String,
-      trim: true,
-      required: "Password is Required",
-    },
+//     password: {
+//       type: String,
+//       trim: true,
+//       required: "Password is Required",
+//     },
 
-    // uniqueId: {
-    //   type: String
-    // }
+//     // uniqueId: {
+//     //   type: String
+//     // }
     
-  });
+//   });
 
-  const User = mongoose.model("User", userSchema);
+//   const User = mongoose.model("User", userSchema);
   
-  module.exports = User;
+//   module.exports = User;
