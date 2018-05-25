@@ -18,7 +18,7 @@ class BasicGen extends Component {
 		super(props);
 		this.state = {
 			project: {
-				name: "New Project",
+				name: "",
 				generator: {
 					capacity: null,
 				},
@@ -168,7 +168,10 @@ class BasicGen extends Component {
                                         >
                                         Add New Draw
                                         </AddNewDraw>
-                                        <PDF /> 
+                                        <PDF
+                                        projectName={this.state.name}
+                                        loads={this.state.loads}
+                                        /> 
                                     </Column>
                                 </Row>
                                 <br />

@@ -2,26 +2,26 @@ import React from "react";
 import "./PDF.css";
 import jsPDF from "jspdf";
 // import Project from "../../../../models/Project.js";
-// import BasicGen from "../../pages/BasicGen/BasicGen.js";
+import BasicGen from "../../pages/BasicGen/BasicGen.js";
 
 // DUMMY Project OBJECT STANDING IN FOR DATABASE OBJECT FOR PDF GENERATOR
 const Project = {
     user: {
-        username: "Mr Bill"
+        username: "Orit Freud"
     },
-    name: "Scene 5 Film Shoot",
+    name: "Film Shoot",
     loads: [
         {
-            name: "Rooftop 2k",
-            current: 1.6,
-            phase: "single",
+            name: "10k spotlight",
+            current: 10,
+            phase: "Single",
             connections: "L1",
             type: "resistive"
         },{
-            name: "Rooftop 4k",
-            current: 3.2,
-            phase: "three",
-            connections: null,
+            name: "100k spotlight",
+            current: 100,
+            phase: "Three",
+            connections: "L1, L2, L3",
             type: "inductive"
         }
     ]
@@ -31,7 +31,6 @@ const Project = {
 const userName = Project.user.username;
 const projectName = Project.name;
 const projectLoads = Project.loads;
-
 // FUNCTION TO MAKE NEW ROWS FOR PDF TABLE
 function loadRowFunc(projectLoads){
     let newRows = "";
@@ -64,6 +63,36 @@ var modelPDF =
             <th>Type</th>
         </tr>
         ${loadRowFunc(projectLoads)}
+    </table>
+    <table>
+        <tr>
+            <th>Loads</th>
+            <th>L1</th>
+            <th>L2</th>
+            <th>L3</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>10k light</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>100k light</td>
+            <td>26.66</td>
+            <td>26.66</td>
+            <td>26.66</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Totals</td>
+            <td>36.66</td>
+            <td>26.66</td>
+            <td>26.66</td>
+            <td>90</td>
+        </tr>
     </table>
 </div>`;
 
@@ -156,15 +185,20 @@ function HTMLtoPDF(){
             //          this allow the insertion of new lines after html
             pdf.save(pdfFileName||'ZRdiagram.pdf');
           }
-      )		
-    }
+    )
+    // A console log to see what is happening here...
+    console.log();
+}
 
-export const PDF = ({PDFrequest}) => {
+export const PDF = props => {
     return (
         // button that yields pdf
         <button
+        projectName={props.projectName}
+        loads={props.loads}
         className="pdfButton"
         onClick={HTMLtoPDF}
+
         >Generate PDF</button>
     );
 };
