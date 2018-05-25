@@ -18,7 +18,7 @@ class BasicGen extends Component {
 		super(props);
 		this.state = {
 			project: {
-				name: "New Project",
+				name: "",
 				generator: {
 					capacity: null,
 				},
