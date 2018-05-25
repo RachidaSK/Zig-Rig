@@ -3,9 +3,9 @@
     color: white;
     border: 1px solid white;
     border-radius: 8px;
-    padding: 10px 42px;
+    padding: 8px 34px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .saveButton:hover {
