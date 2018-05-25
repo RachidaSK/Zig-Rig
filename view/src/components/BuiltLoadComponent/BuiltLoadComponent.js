@@ -36,6 +36,7 @@ const BuiltLoadComponent = (props) => (
                     <Row>
                         <Column size="lg-12">
                             <div className="savedProjectLegs">
+                            {console.log( props.loadData )}
                                 Leg: {Object.values(props.loadData.connections).join(", ")}
                             </div>
                         </Column>

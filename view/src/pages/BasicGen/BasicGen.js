@@ -119,9 +119,9 @@ class BasicGen extends Component {
                 <Container fluid>
                     <div className="homeContainer animated fadeInLeftBig">
                         <Row>
-                            <Column size="lg-6">
+                            <Column size="lg-6 md-12 sm-12">
                                 <Row>
-                                    <Column size="lg-12">
+                                    <Column size="lg-12 md-12 sm-12">
                                         <SaveButton onClick={this.handleSaveButton}
                                         >
                                         Save
@@ -135,7 +135,7 @@ class BasicGen extends Component {
                                 </Row>
                                 <br />
                                 <Row>
-                                    <Column size="lg-12">
+                                    <Column size="lg-12 md-12 sm-12">
                                         <InputProject
                                             value={this.state.project.name}
                                             onChange={this.handleInputChange}
@@ -146,24 +146,24 @@ class BasicGen extends Component {
                                 </Row>
                                 {/* <div id="templatesDiv"> */}
                                 <Row>
-                                    <Column size="lg-12">
+                                    <Column size="lg-12 md-12 sm-12">
                                         <h4 id="loadTemplatesHeader">Load Templates:</h4>
                                     </Column>
                                 </Row>
                                 <Row>
-                                    <Column size="lg-4">
+                                    <Column size="lg-4 md-4 sm-4">
                                         <div className="loadTemplateExample1">Example #1</div>
                                     </Column>
-                                    <Column size="lg-4">
+                                    <Column size="lg-4 md-4 sm-4">
                                         <div className="loadTemplateExample2">Example #2</div>
                                     </Column>
-                                    <Column size="lg-4">        
+                                    <Column size="lg-4 md-4 sm-4">        
                                         <div className="loadTemplateExample3">Example #3</div>
                                     </Column>
                                 </Row>
                                 {/* </div> */}
                                 <Row>
-                                    <Column size="lg-12">
+                                    <Column size="lg-12 md-12 sm-12">
                                         <div className="currentLegTotalsHome">
                                             <h4>Current Leg Totals:</h4>
                                             <ul>
@@ -176,10 +176,10 @@ class BasicGen extends Component {
                                     </Column>    
                                 </Row>
                             </Column>
-                            <Column size="lg-6">
+                            <Column size="lg-6 md-12 sm-12">
                                 <Row>
-                                    <Column size="lg-12" className="genDiv">
-                                        <img className="generatorImage" src="/images/generatorO.png" alt="Generator"/>
+                                    <Column size="lg-12 md" className="genDiv">
+                                        <img className="generatorImage img-responsive" src="/images/generatorO.png" alt="Generator"/>
                                     </Column>
                                 </Row>
                                 <Row>
@@ -188,7 +188,7 @@ class BasicGen extends Component {
                                             this.state.project.loads.map(load => (
                                                 <BuiltLoadComponent loadData={load} />
                                             ))
-                                        ) : <h2>No loads to display.</h2>}
+                                        ) : <h2 className="noLoads">No loads to display.</h2>}
                                     </Column>
                                 </Row>
                             </Column>
