@@ -156,7 +156,7 @@ var pdfData =
 ;
 
 // A variable to (in the future) generate a filename if the Project name exists
-var pdfFileName = projectName ? ""+userName+"."+projectName+"":undefined;
+var pdfFileName = projectName ? ""+userName+"-"+projectName+".pdf":undefined;
 
 function HTMLtoPDF(){
     var pdf = new jsPDF('p', 'pt', 'letter');
