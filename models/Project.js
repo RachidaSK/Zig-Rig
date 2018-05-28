@@ -37,7 +37,10 @@ const projectSchema = new Schema({
       }
     ],
 		
-    // user: {type: String} 
+    user: {
+      type: String,
+      required: true
+    } 
 	
 
 });

@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
  
-  getProjects: function() {
-    return axios.get("/api/project");
+  getProjects: function(userId) {
+    return axios.get("/api/project/user/" + userId);
   },
 
   getProject: function(id) {

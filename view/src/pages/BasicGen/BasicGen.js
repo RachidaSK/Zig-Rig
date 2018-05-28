@@ -21,11 +21,12 @@ class BasicGen extends Component {
 		super(props);
 		this.state = {
 			project: {
-				name: "",
+                name: "",
+                user: "",
 				generator: {
 					capacity: null,
 				},
-				loads: [],
+                loads: [],
 			}
 		}
 	}
@@ -34,25 +35,31 @@ class BasicGen extends Component {
 	}
 
     componentDidMount () {
-        if (sessionStorage.getItem('id_token') > 0) {
-            let uid = sessionStorage.getItem('id_token');
-            console.log(uid);
+        let userId = "";
+        if (localStorage.getItem('id_token')) {
+            let uid = localStorage.getItem('id_token');
+            let userInfo = jwt_decode(uid);
+            userId = userInfo.sub;
+            console.log(userId);
         } else {
             setIdToken();
             setAccessToken();
-            let token = sessionStorage.getItem('id_token');
+            let token = localStorage.getItem('id_token');
             let userInfo = jwt_decode(token);
-            let userId = userInfo.sub;
-            console.log(token);
-            console.log(userInfo);
-            console.log(userId);
+            userId = userInfo.sub;
         }
+
+        let project = this.state.project;
+        project.user = userId;
+        this.setState({project});
 
         let id = this.props.match.params.id;
         if (id) {
+            // let user = localStorage.getItem('id_token');
             let project = this.state.project;
             API.getProject(id) 
                 .then(res => (
+                    // project.user = res.data.user,
                     project.name = res.data.name,
                     project.generator = res.data.generator,
                     project.loads = res.data.loads,
@@ -80,7 +87,8 @@ class BasicGen extends Component {
         API.saveProject({
             name: realProject.name,
             generator: realProject.generator,
-            loads: realProject.loads
+            loads: realProject.loads,
+            user: realProject.user
         })
         .then(res => window.location.href="/myprojects")
         .catch(err => console.log(err));
@@ -198,9 +206,9 @@ class BasicGen extends Component {
                                         <div className="currentLegTotalsHome">
                                             <h4>Current Leg Totals:</h4>
                                             <ul>
-                                                <h5>L1: {loads[0]*1}</h5>
-                                                <h5>L2: {loads[1]*1}</h5>
-                                                <h5>L3: {loads[2]*1}</h5>
+                                                <h5>L1: {(loads[0]*1).toFixed(2)}</h5>
+                                                <h5>L2: {(loads[1]*1).toFixed(2)}</h5>
+                                                <h5>L3: {(loads[2]*1).toFixed(2)}</h5>
                                             </ul>
                                         </div>
                                     </Column>    

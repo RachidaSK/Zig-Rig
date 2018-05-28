@@ -5,7 +5,9 @@ import DeleteButton from "../../components/DeleteButton";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Link } from "react-router-dom";
-
+import '../../components/Auth/Auth';
+import { setIdToken, setAccessToken, isLoggedIn } from "../../components/Auth/Auth";
+import jwt_decode from 'jwt-decode';
 
 
 
@@ -18,10 +20,17 @@ class MyProjects extends Component {
         require( "./MyProjects.css" );
     }
     componentDidMount() {
-        this.loadProjects();
+        let userId = "";
+        if (localStorage.getItem('id_token')) {
+            let uid = localStorage.getItem('id_token');
+            let userInfo = jwt_decode(uid);
+            userId = userInfo.sub;
+            console.log(userId);
+        }
+        this.loadProjects(userId);
       }
-    loadProjects = () => {
-        API.getProjects()
+    loadProjects = (userId) => {
+        API.getProjects(userId)
           .then(res =>
             this.setState({ projects: res.data })
           )
