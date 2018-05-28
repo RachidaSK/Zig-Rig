@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import '../../components/Auth/Auth';
 import { setIdToken, setAccessToken, isLoggedIn } from "../../components/Auth/Auth";
 import jwt_decode from 'jwt-decode';
-
+import Footer from "../../components/Footer";
 
 
 class MyProjects extends Component {
@@ -74,8 +74,23 @@ class MyProjects extends Component {
                                 )}
                             </Column>
                         </Row>
+                        <hr />
+                        <Row>
+                            <Column size="lg-12">
+                                <h6>Example Project #2</h6>
+                                <DeleteButton />
+                            </Column>
+                        </Row>
+                        <hr />
+                        <Row>
+                            <Column size="lg-12">
+                                <h6>Example Project #3</h6>
+                                <DeleteButton />
+                            </Column>
+                        </Row>
                     </div>
                 </Container>
+                <Footer />
             </div>
         )
     }        

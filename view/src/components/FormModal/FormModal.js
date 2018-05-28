@@ -80,58 +80,72 @@ class FormModal extends React.Component {
         return (
             <div>
                 <Row>
-                    <Column size="lg-12">
-                        <InputModal
-                            value={this.name}
-                            onChange={this.handleInputModalChange}
-                            name="name"
-                            placeholder="New Draw Title"
-                        />
-                    </Column>
+                    <InputModal
+                        value={this.name}
+                        onChange={this.handleInputModalChange}
+                        name="name"
+                        placeholder="New Draw Title"
+                    />
                 </Row>
                 <br />
-                
                 <Row>
                     <Column size="lg-4">
-                        <label id="phase1">
-                            Phase:
-                        </label>
-                        <label className="checkbox">
-                            <input type="radio" className="phase2 checkbox-control" checked={this.state.phase === 'Single Phase'} value="Single Phase" onChange={this.switchPhase}/>
-                            <span className="checkbox-label">Single Phase</span>
-                        </label>
-                        <label className="checkbox">
-                            <input type="radio" className="phase2 checkbox-control" checked={this.state.phase === 'Three Phase'} value="Three Phase" onChange={this.switchPhase}/>
-                            <span className="checkbox-label">Three Phase</span>
-                        </label>
+                        <Row>
+                            <label id="phase1">
+                                Phase:
+                            </label>
+                        </Row>
+                        <Row>
+                            <label className="checkbox">
+                                <input type="radio" className="phase2 checkbox-control" checked={this.state.phase === 'Single Phase'} value="Single Phase" onChange={this.switchPhase}/>
+                                <span className="checkbox-label">Single Phase</span>
+                            </label>
+                        </Row>
+                        <Row>
+                            <label className="checkbox">
+                                <input type="radio" className="phase2 checkbox-control" checked={this.state.phase === 'Three Phase'} value="Three Phase" onChange={this.switchPhase}/>
+                                <span className="checkbox-label">Three Phase</span>
+                            </label>
+                        </Row>
                     </Column>
                     <Column size="lg-4">
-                        <label id="type1">
-                            Type:
-                        </label>
-                        <label className="checkbox">
-                            <input type="radio" className="type2 checkbox-control" checked={this.state.type === 'Resistive'} value="Resistive" onChange={this.switchType}/>
-                            <span className="checkbox-label3">Resistive</span>
-                        </label>
+                        <Row>
+                            <label id="type1">
+                                Type:
+                            </label>
+                        </Row>
+                        <Row>
+                            <label className="checkbox">
+                                <input type="radio" className="type2 checkbox-control" checked={this.state.type === 'Resistive'} value="Resistive" onChange={this.switchType}/>
+                                <span className="checkbox-label3">Resistive</span>
+                            </label>
+                        </Row>
+                        <Row>
                         <label className="checkbox">
                             <input type="radio" className="type2 checkbox-control" checked={this.state.type === 'Inductive'} value="Inductive" onChange={this.switchType}/>
                             <span className="checkbox-label">Inductive</span>
                         </label>
+                        </Row>
                     </Column>
                     <Column size="lg-4">
-                        <label id="current">
-                            Current:
-                        </label>
-                        <InputModal
-                            value={this.current}
-                            onChange={this.handleInputChange}
-                            name="current"
-                            placeholder="0"
-                        />
+                        <Row>
+                            <label id="current">
+                                Current:
+                            </label>
+                        </Row>
+                        <Row>
+                            <InputModal
+                                value={this.current}
+                                onChange={this.handleInputChange}
+                                name="current"
+                                placeholder="0"
+                            />
+                        </Row>
                     </Column>
                 </Row>
                 <br />
                 <Row>
+
                     <label id="selectLegsLabel">
                         Select Legs:
                     </label>
@@ -153,9 +167,10 @@ class FormModal extends React.Component {
                             <span className="checkbox-label">L3</span>
                         </label>
                     <Column size="lg-2">
+
                     </Column>
-                </Row>  
-                <br />  
+                </Row> 
+             <br />  
                 <br />     
                 <Row >
                     <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
