@@ -160,6 +160,7 @@ var pdfFileName = projectName ? ""+userName+"-"+projectName+".pdf":undefined;
 
 function HTMLtoPDF(){
     var pdf = new jsPDF('p', 'pt', 'letter');
+    console.log(this.props);
     var source = Project?modelPDF:pdfData;
     // source = $('#HTMLtoPDF')[0];
     var specialElementHandlers = {
@@ -194,11 +195,10 @@ export const PDF = props => {
     return (
         // button that yields pdf
         <button
-        projectName={props.projectName}
+        currentProject={props.currentProject}
         loads={props.loads}
         className="pdfButton"
         onClick={HTMLtoPDF}
-
         >Generate PDF</button>
     );
 };
