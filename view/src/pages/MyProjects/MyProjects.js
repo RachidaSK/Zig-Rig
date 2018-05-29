@@ -9,7 +9,7 @@ import '../../components/Auth/Auth';
 import { setIdToken, setAccessToken, isLoggedIn } from "../../components/Auth/Auth";
 import jwt_decode from 'jwt-decode';
 import Footer from "../../components/Footer";
-import Footer from "../../components/Footer";
+
 
 class MyProjects extends Component {
     state = {
