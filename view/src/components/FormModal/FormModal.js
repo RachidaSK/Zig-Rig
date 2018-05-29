@@ -167,14 +167,14 @@ class FormModal extends React.Component {
                         </label>
                     <Column size="lg-2">
                     </Column>
-                </Row>  
-                <br />
-                <br />
+                </Row> 
+             <br />  
+                <br />     
                 <Row >
                     <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
-                    <b className="currentLegTotalsModal">L1:</b> <i>0</i> <b>L2:</b> <i>0</i> <b>L3:</b> <i>0</i> <b>N:</b> <i>0</i> 
+                    <b className="currentLegTotalsModal">L1:</b> <i>0</i>  <b>L2:</b> <i>0</i>  <b>L3:</b> <i>0</i>  <b>N:</b> <i>0</i>
                     <AddButtonModal onClick={this.handleFormSubmit}/>
-                </Row >
+                </Row>
             </div>
 
         )
