@@ -41,7 +41,7 @@ class FormModal extends React.Component {
     switchPhase = event => {
         let selectPhase = event.target.value;
 		this.setState({
-			phase: selectPhase,
+            phase: selectPhase,
 			selectPhase: null,
 		});
     };
@@ -145,7 +145,6 @@ class FormModal extends React.Component {
                 </Row>
                 <br />
                 <Row>
-
                     <label id="selectLegsLabel">
                         Select Legs:
                     </label>
@@ -167,7 +166,6 @@ class FormModal extends React.Component {
                             <span className="checkbox-label">L3</span>
                         </label>
                     <Column size="lg-2">
-
                     </Column>
                 </Row> 
              <br />  
