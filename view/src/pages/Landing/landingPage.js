@@ -15,8 +15,8 @@ class LandingPage extends Component {
                 <Container fluid>
                     <div className="landingPageDiv">
                         <Row>
-                            <Column size="6">
-                                <img src='/images/authLogo.png' className="landingPageLogo" />
+                            <Column size="12">
+                                <img src='/images/logoColor.png' className="landingPageLogo center img-responsive" />
                             </Column>
                         </Row>
                         <br />
@@ -24,7 +24,7 @@ class LandingPage extends Component {
                             <Column size="12">
                                 <h2 className="landingPageHeader">Welcome to Zig-Rig!</h2>
                                 <br />
-                                <p> Zig-Rig is a simple, easy-to-use online  planning tool for <br />
+                                <p className="zigRigDef"> Zig-Rig is a simple, easy-to-use online  planning tool for <br />
                                     calculating electrical power distribution for a multitude of power sources.</p>
                             </Column>
                         </Row>
