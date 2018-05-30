@@ -1,6 +1,6 @@
 .addButtonModal {
     float: right;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(94, 142, 165);
     color: white;
     border: 1px solid white;
     border-radius: 8px;
@@ -11,7 +11,7 @@
 }
 
 .addButtonModal:hover {
-    background-color: rgb(50, 72, 92);;
+    background-color: rgb(143, 143, 143);
     border-color: white;
     cursor: pointer;
 }
