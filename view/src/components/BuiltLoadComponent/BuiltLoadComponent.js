@@ -35,12 +35,12 @@ const BuiltLoadComponent = (props) => (
                     </Row>
                     <br />
                     <Row>
-                        <Column size="lg-8">
+                        <Column size="lg-9">
                             <div className="savedProjectLegs">
                                 Legs: L1: {Object.values(props.loadData.connections[0])}  L2: {Object.values(props.loadData.connections[1])}  L3: {Object.values(props.loadData.connections[2])} 
                             </div>
                         </Column>
-                        <Column size="lg-4">
+                        <Column size="lg-3">
                             <div className="editLoadButton">
                                 <EditButton />
                             </div>

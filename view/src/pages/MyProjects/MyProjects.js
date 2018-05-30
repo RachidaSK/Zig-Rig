@@ -9,6 +9,7 @@ import '../../components/Auth/Auth';
 import { setIdToken, setAccessToken, isLoggedIn } from "../../components/Auth/Auth";
 import jwt_decode from 'jwt-decode';
 import Footer from "../../components/Footer";
+import EditButton from "../../components/EditButton";
 
 
 class MyProjects extends Component {
@@ -61,6 +62,7 @@ class MyProjects extends Component {
                                     {this.state.projects.map(project => (
                                     <ListItem key={project._id}>
                                         <Link to={"/home/" + project._id}>
+                                        <EditButton />
                                         <strong>
                                             {project.name}
                                         </strong>
@@ -70,24 +72,11 @@ class MyProjects extends Component {
                                     ))}
                                 </List>
                                 ) : (
-                                <h3>No Results to Display</h3>
+                                <h3 id="noSavedProjects">No Results to Display</h3>
                                 )}
                             </Column>
                         </Row>
                         <hr />
-                        <Row>
-                            <Column size="lg-12">
-                                <h6>Example Project #2</h6>
-                                <DeleteButton />
-                            </Column>
-                        </Row>
-                        <hr />
-                        <Row>
-                            <Column size="lg-12">
-                                <h6>Example Project #3</h6>
-                                <DeleteButton />
-                            </Column>
-                        </Row>
                     </div>
                 </Container>
                 <Footer />

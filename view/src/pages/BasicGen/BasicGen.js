@@ -131,13 +131,8 @@ class BasicGen extends Component {
             ampsAdded[1] = load.connections[1]*1;
             ampsAdded[2] = load.connections[2]*1;
             //Multiply by PF constant if inductive load
-<<<<<<< HEAD
-            if (load.type==='Inductive') {
-                console.log('inductive mode happening');
-=======
             if (load.type=='Inductive') {
-              //  console.log('inductive mode happening');
->>>>>>> 2d7361b60156c6a575bb6f8cae3a9cec4da373e4
+                console.log('inductive mode happening');
                 ampsAdded = ampsAdded.map(x => 0.8*x);
             }
             for (let j=0;j<genLoad.length;j++) {

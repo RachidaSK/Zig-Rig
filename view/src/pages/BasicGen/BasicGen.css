@@ -48,6 +48,10 @@
     color: white;
 }
 
+#noSavedProjects {
+    color: white;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 1440px) {
     .homeContainer {
