@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Column, Container } from "../Grid";
+import EditButton from "../EditButton";
 import "./BuiltLoadComponent.css";
 
 const BuiltLoadComponent = (props) => (
@@ -34,10 +35,15 @@ const BuiltLoadComponent = (props) => (
                     </Row>
                     <br />
                     <Row>
-                        <Column size="lg-12">
+                        <Column size="lg-8">
                             <div className="savedProjectLegs">
                             {console.log( props.loadData )}
                                 Leg: {Object.values(props.loadData.connections).join(", ")}
+                            </div>
+                        </Column>
+                        <Column size="lg-4">
+                            <div className="editLoadButton">
+                                <EditButton />
                             </div>
                         </Column>
                     </Row>

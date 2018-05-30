@@ -16,7 +16,7 @@ class LandingPage extends Component {
                     <div className="landingPageDiv">
                         <Row>
                             <Column size="12">
-                                <img src='/images/logoColor.png' className="landingPageLogo center img-responsive" />
+                                <img src='/images/logoColor.png' className="landingPageLogo center img-responsive" alt="Zig-Rig Logo"/>
                             </Column>
                         </Row>
                         <br />

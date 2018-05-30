@@ -7,7 +7,7 @@ import LandingPage from './pages/Landing/landingPage.js';
 import MyProjects from "./pages/MyProjects";
 import Contact from "./pages/Contact"
 import About from "./pages/About";
-import css from "./App.css";
+import "./App.css";
 
 
 function setBackground () {
@@ -29,8 +29,6 @@ const App = () => (
     <div style={setBackground()}>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        {/* <Route exact path="/signin" component={LandingPage} /> */}
-        {/* <Route exact path="/signup" component={SignUp} /> */}
         <Route exact path="/home" component={BasicGen} />
         <Route exact path="/myprojects" component={MyProjects} />
         <Route exact path="/contactus" component={Contact} />
