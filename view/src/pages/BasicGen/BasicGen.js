@@ -146,6 +146,7 @@ class BasicGen extends Component {
 
     render() {
         let loads = this.calculateLoad();
+        const currentProject = this.state.project;
         return [
             this.state.modalVisible ? (
 				<Modal
@@ -170,9 +171,9 @@ class BasicGen extends Component {
                                         Add New Draw
                                         </AddNewDraw>
                                         <PDF
-                                        projectName={this.state.name}
-                                        loads={this.state.loads}
-                                        /> 
+                                        currentProject={currentProject}
+                                        loads={loads}
+                                        />
                                     </Column>
                                 </Row>
                                 <br />
