@@ -76,7 +76,6 @@ class MyProjects extends Component {
                                 )}
                             </Column>
                         </Row>
-                        <hr />
                     </div>
                 </Container>
                 <Footer />
