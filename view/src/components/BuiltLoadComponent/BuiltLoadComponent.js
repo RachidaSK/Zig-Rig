@@ -29,7 +29,7 @@ const BuiltLoadComponent = (props) => (
                         </Column>
                         <Column size="lg-4">
                             <div className="savedProjectCurrent">
-                                Current: {props.loadData.current}
+                                Current: {props.loadData.current*1}
                             </div>
                         </Column>
                     </Row>
@@ -37,8 +37,7 @@ const BuiltLoadComponent = (props) => (
                     <Row>
                         <Column size="lg-8">
                             <div className="savedProjectLegs">
-                            {console.log( props.loadData )}
-                                Leg: {Object.values(props.loadData.connections).join(", ")}
+                                Legs: L1: {Object.values(props.loadData.connections[0])}  L2: {Object.values(props.loadData.connections[1])}  L3: {Object.values(props.loadData.connections[2])} 
                             </div>
                         </Column>
                         <Column size="lg-4">

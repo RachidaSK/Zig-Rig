@@ -13,7 +13,7 @@ class FormModal extends React.Component {
         phase: "",
         current: "",
         type: "",
-        connections: {
+        legs: {
             L1: null,
             L2: null,
             L3: null
@@ -42,11 +42,6 @@ class FormModal extends React.Component {
         let selectPhase = event.target.value;
 		this.setState({
             phase: selectPhase,
-            connections: {
-                L1: "L1",
-                L2: "L2",
-                L3: "L3"
-            },
 			selectPhase: null,
 		});
     };
@@ -75,7 +70,7 @@ class FormModal extends React.Component {
     switchConnection = event => {
         const { name, value } = event.target;
         this.setState({
-          connections: {
+          legs: {
             [name]: value
           }
         });
@@ -150,45 +145,36 @@ class FormModal extends React.Component {
                 </Row>
                 <br />
                 <Row>
-                    <Column size="lg-12">
-                        <Row>
-                            <label id="selectLegsLabel">
-                                Select Legs:
-                            </label>
-                        </Row>
-                        <Row>
-                            <Column size="lg-2">
-                                <Row>
-                                    <label className="checkbox">
-                                        <input id="L1" type="radio" name="L1" className="checkbox-control" checked={this.state.connections.L1} value="L1" onChange={this.switchConnection}/>
-                                        <span className="checkbox-label">L1</span>
-                                    </label>
-                                </Row>
-                            </Column>
-                            <Column size="lg-2">
-                                <Row>
-                                    <label className="checkbox">
-                                        <input id="L2" type="radio" name="L2" className="checkbox-control" checked={this.state.connections.L2} value="L2" onChange={this.switchConnection}/>
-                                        <span className="checkbox-label">L2</span>
-                                    </label>
-                                </Row>
-                            </Column>
-                            <Column size="lg-4">
-                                <Row>
-                                    <label className="checkbox">
-                                        <input id="L3" type="radio" name="L3" className="checkbox-control" checked={this.state.connections.L3} value="L3" onChange={this.switchConnection}/>
-                                        <span className="checkbox-label">L3</span>
-                                    </label>
-                                </Row>
-                            </Column>
-                            <Column size="lg-4">
-                                <Row>
-                                    <AddButtonModal onClick={this.handleFormSubmit}/>
-                                </Row>
-                            </Column>
-                        </Row>
+                    <label id="selectLegsLabel">
+                        Select Legs:
+                    </label>
+                    <br />
+                    <Column size="lg-2">
+                    <label className="checkbox">
+                            <input id="L1" type="radio" name="L1" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.legs.L1} value="L1" onChange={this.switchConnection}/>
+                            <span className="checkbox-label">L1</span>
+                        </label>
                     </Column>
-                </Row>  
+                    <Column size="lg-2">
+                    <label className="checkbox">
+                            <input id="L2" type="radio" name="L2" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.legs.L2} value="L2" onChange={this.switchConnection}/>
+                            <span className="checkbox-label">L2</span>
+                        </label>
+                    </Column>
+                    <label className="checkbox">
+                            <input id="L3" type="radio" name="L3" className="checkbox-control" checked={this.state.phase === "Three Phase" || this.state.legs.L3} value="L3" onChange={this.switchConnection}/>
+                            <span className="checkbox-label">L3</span>
+                        </label>
+                    <Column size="lg-2">
+                    </Column>
+                </Row> 
+             <br />  
+                <br />     
+                <Row >
+                    <b className="currentLegTotalsModal">Current Leg Totals:</b><br/>
+                    <b className="currentLegTotalsModal">L1:</b> <i>0</i>  <b>L2:</b> <i>0</i>  <b>L3:</b> <i>0</i>  <b>N:</b> <i>0</i>
+                    <AddButtonModal onClick={this.handleFormSubmit}/>
+                </Row>
             </div>
 
         )
