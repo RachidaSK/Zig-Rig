@@ -1,17 +1,18 @@
-.addButtonModal {
-    float: right;
+.editButton {
     background-color: rgb(94, 142, 165);
     color: white;
     border: 1px solid white;
     border-radius: 8px;
-    padding: 10px 30px;
+    padding: 8px 20px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    width: 100%;
+    margin-top: 2%;
+    margin-left: 12px;
+    font-size: 16px;
+    margin: 10px 20px 10px 8px;
 }
 
-.addButtonModal:hover {
-    background-color: rgb(143, 143, 143);
+.editButton:hover {
+    background-color: rgb(116, 174, 201);
     border-color: white;
     cursor: pointer;
 }

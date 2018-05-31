@@ -1,6 +1,6 @@
  #selectLegsLabel {
     font-size: 18px;
-    color: grey;
+    color: rgb(94, 142, 165);
 }
 
 .checkbox {
@@ -12,27 +12,19 @@
 #phase1 {
     /* margin-bottom: 20px; */
     font-size: 18px;
-    color: grey;
+    color: rgb(94, 142, 165);
 
 }
 
 #type1 {
     /* margin-bottom: 20px; */
     font-size: 18px;
-    color: grey;
-}
-
-#phase1,
-#selectLegsLabel {
-  
+    color: rgb(94, 142, 165);
 }
 
 #current {
     font-size: 18px;
-    color: grey;
+    color: rgb(94, 142, 165);
 }
 
-.checkbox-label3 {
-  
-}
 

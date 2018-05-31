@@ -6,6 +6,9 @@ router.route("/")
   .get(projectController.findAll)
   .post(projectController.create);
 
+router.route("/user/:userId")
+  .get(projectController.findAll);
+
 // Matches with "/api/project/:id"
 router
   .route("/:id")

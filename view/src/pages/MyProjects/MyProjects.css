@@ -1,6 +1,7 @@
 body {
     background: url("/images/concreteTextureDark1.jpg") no-repeat center center fixed;
     background-size: cover;
+		height: 100%;
 }
 
 .myProjectsContainer {
@@ -13,6 +14,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
+		margin-top: 50px;
     box-shadow: 3px 4px 5px #3b3b3b;
 }
 

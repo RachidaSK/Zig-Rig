@@ -9,20 +9,24 @@ import Modal from "../../components/Modal";
 import {PDF} from '../../components/PDF';
 import BuiltLoadComponent from "../../components/BuiltLoadComponent";
 import '../../components/Auth/Auth';
-import { setIdToken, setAccessToken } from "../../components/Auth/Auth";
-
+import { setIdToken, setAccessToken, isLoggedIn } from "../../components/Auth/Auth";
+import API from "../../utils/API";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MyProjects from "../../pages/MyProjects";
 import Footer from "../../components/Footer";
 
 class BasicGen extends Component {
+   
 	constructor(props) {
 		super(props);
 		this.state = {
 			project: {
-				name: "",
+                name: "",
+                user: "",
 				generator: {
 					capacity: null,
 				},
-				loads: [],
+                loads: [],
 			}
 		}
 	}
@@ -31,22 +35,41 @@ class BasicGen extends Component {
 	}
 
     componentDidMount () {
-        if (localStorage.getItem('id_token') > 0) {
+        let userId = "";
+        if (localStorage.getItem('id_token')) {
             let uid = localStorage.getItem('id_token');
-            console.log(uid);
+            let userInfo = jwt_decode(uid);
+            userId = userInfo.sub;
+            console.log(userId);
         } else {
             setIdToken();
             setAccessToken();
             let token = localStorage.getItem('id_token');
             let userInfo = jwt_decode(token);
-            let userId = userInfo.sub;
-            console.log(token);
-            console.log(userInfo);
-            console.log(userId);
+            userId = userInfo.sub;
         }
+
+        let project = this.state.project;
+        project.user = userId;
+        this.setState({project});
+
+        let id = this.props.match.params.id;
+        if (id) {
+            // let user = localStorage.getItem('id_token');
+            let project = this.state.project;
+            API.getProject(id) 
+                .then(res => (
+                    // project.user = res.data.user,
+                    project.name = res.data.name,
+                    project.generator = res.data.generator,
+                    project.loads = res.data.loads,
+                    this.setState({project})
+                ),
+                )
+                .catch(err => console.log(err));
+        }   
     }
 
-	
     handleInputChange = event => {
         const { value } = event.target;
         const { project } = this.state;
@@ -59,7 +82,17 @@ class BasicGen extends Component {
 	}
 
 	handleSaveButton = event => {
-
+        event.preventDefault();
+        let realProject = this.state.project;
+        API.saveProject({
+            name: realProject.name,
+            generator: realProject.generator,
+            loads: realProject.loads,
+            user: realProject.user
+        })
+        .then(res => window.location.href="/myprojects")
+        .catch(err => console.log(err));
+        
 	}
 
 	toggleModalVisible = () => {
@@ -69,66 +102,34 @@ class BasicGen extends Component {
 	}
 	//BasicGen -> Modal -> FormModal -> AddButtonModal
 	addNewLoad = (load) => {
-		// this.state.project.loads = this.state.project.loads.concat({
-		// 	name: "Dummy Load",
-		// 	current: 20,
-		// 	phase: "single",
-		// 	connection: "L1",
-		// 	type: "resistive",
-		// });
-		// ___________________LOADS UPDATE FUNCTION
-		// const { loads } = this.state.project;
-		// const newLoads = loads.concat(load);
-
-		// this.setState({
-		// 	project: {
-		// 		loads: newLoads
-		// 	}
-		// });
-		// ________________________________________
-
-		let newState = this.state;
-		console.log(load);
-		console.log(newState);
+        let newState = this.state;
+        let connectionsArray = [0,0,0];
+        if (load.phase==='Single Phase') {
+               if (load.legs.L1) {
+                    connectionsArray[0]=load.current*1;
+               } else if (load.legs.L2) {
+                    connectionsArray[1]=load.current*1;
+               } else {
+                    connectionsArray[2]=load.current*1;
+               }
+           } else { //it's 3-phase
+                connectionsArray = [load.current/3,load.current/3,load.current/3];
+           }	
+        load.connections = connectionsArray;
 		newState.project.loads.push(load);
-		console.log(newState);
 		this.setState(newState);
-
-
-		// const { loads } = this.state.project;
-		// const newLoads = loads.concat(load);
-
-		// this.setState({
-		// 	project: {
-		// 		loads: newLoads
-		// 	}
-		// });
 	}
 
     calculateLoad=()=> {
         let genLoad = [0,0,0];
-        console.log(this.state.project.loads)
+        //console.log(this.state.project.loads)
         for (let i=0;i<this.state.project.loads.length;i++) {
             let ampsAdded = [0,0,0];
             let load = this.state.project.loads[i];
             let current = Number(load.current);
-            console.log(load.phase)
-            if (load.phase==='Single Phase') {
-                console.log('executing single-phase');
-                console.log('connection:'+load.connections);
-                if (load.connections.L1) {
-                    ampsAdded[0]=current;
-                } else if (load.connections.L2) {
-                    ampsAdded[1]=current;
-                } else {
-                    ampsAdded[2]=current;
-                }
-                console.log('Amps to be added: '+ampsAdded)
-            } else { //it's 3-phase
-                console.log("Executing 3-phase calc");
-                ampsAdded = [current/3,current/3,current/3];
-                console.log('Amps to be added: '+ampsAdded)
-            }	
+            ampsAdded[0] = load.connections[0]*1;
+            ampsAdded[1] = load.connections[1]*1;
+            ampsAdded[2] = load.connections[2]*1;
             //Multiply by PF constant if inductive load
             if (load.type=='Inductive') {
                 console.log('inductive mode happening');
@@ -138,13 +139,14 @@ class BasicGen extends Component {
                 genLoad[j]+=ampsAdded[j];
             }
         }
-        console.log("Final Load: "+genLoad)
+       // console.log("Final Load: "+genLoad)
         return genLoad;
     }
 
 
     render() {
         let loads = this.calculateLoad();
+        const currentProject = this.state.project;
         return [
             this.state.modalVisible ? (
 				<Modal
@@ -169,9 +171,9 @@ class BasicGen extends Component {
                                         Add New Draw
                                         </AddNewDraw>
                                         <PDF
-                                        projectName={this.state.name}
-                                        loads={this.state.loads}
-                                        /> 
+                                        currentProject={currentProject}
+                                        loads={loads}
+                                        />
                                     </Column>
                                 </Row>
                                 <br />
@@ -208,9 +210,9 @@ class BasicGen extends Component {
                                         <div className="currentLegTotalsHome">
                                             <h4>Current Leg Totals:</h4>
                                             <ul>
-                                                <h5>L1: {loads[0]}</h5>
-                                                <h5>L2: {loads[1]}</h5>
-                                                <h5>L3: {loads[2]}</h5>
+                                                <h5>L1: {(loads[0]*1).toFixed(2)}</h5>
+                                                <h5>L2: {(loads[1]*1).toFixed(2)}</h5>
+                                                <h5>L3: {(loads[2]*1).toFixed(2)}</h5>
                                             </ul>
                                         </div>
                                     </Column>    
